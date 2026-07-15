@@ -1,49 +1,621 @@
+/* Importar la fuente "Inter" con los grosores necesarios desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- DEFINICIÓN DE VARIABLES --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --color-logo-blue: #015A7F;
+    --color-logo-cyan: #00D9A8;
+    --color-text-dark: #263151;
+    --color-text-light: #666;
+    --color-background: #FFFFFF;
+    --color-background-alt: #f8f9fa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* --- ESTILOS GENERALES --- */
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* --- ENCABEZADO Y BARRA DE NAVEGACIÓN --- */
+.header {
+    background-color: var(--color-background);
+    padding: 1.3rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.logo img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    padding: 0 5%;
+}
+
+/* --- SECCIÓN HERO --- */
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 90vh;
+    padding-top: 5vh;
+    border-bottom: 1px solid #eee;
+}
+
+.hero-text {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 5vh;
+}
+
+.hero-pretitle {
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--color-logo-cyan);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.hero-title {
+    font-size: 5rem; 
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.5rem 0 1.5rem 0;
+    color: var(--color-logo-blue);
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 100%;
+}
+
+.cta-button {
+    background-color: var(--color-logo-blue);
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #014663;
+    transform: translateY(-2px);
+}
+
+
+/* --- SECCIÓN DE ANIMACIÓN HERO --- */
+.hero-animation-container {
+    width: 50%;
+    height: 60vh;
+    position: relative;
+    align-self: center;
+}
+
+.animated-text-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.animated-text-phrase { font-size: 2.5rem; font-weight: 500; position: absolute; width: 100%; opacity: 0; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 20px; }
+.floating-icons { display: none; }
+.floating-icon { width: 40px; height: 40px; opacity: 0; display: none; flex-shrink: 0; }
+.floating-elements { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.floating-element { position: absolute; opacity: 0.5; border-radius: 15px; z-index: -1; }
+.shape-1 { width: 50px; height: 50px; background-color: var(--color-logo-cyan); top: 15%; left: 20%; }
+.shape-2 { width: 25px; height: 25px; background-color: var(--color-logo-blue); border-radius: 50%; top: 70%; left: 30%; }
+.shape-3 { width: 80px; height: 80px; border: 3px solid var(--color-logo-cyan); top: 50%; left: 80%; }
+.shape-4 { width: 40px; height: 40px; background-color: var(--color-logo-blue); top: 25%; left: 65%; transform: rotate(45deg); }
+
+
+/* --- ESTILOS GENERALES PARA NUEVAS SECCIONES --- */
+.page-section {
+    padding: 100px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.section-title {
+    font-size: 3rem;
+    color: var(--color-logo-blue);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* --- ESTILOS SECCIÓN 'SOBRE NOSOTROS' (MODIFICADO) --- */
+.about-section {
+    position: relative;
+    padding: 100px 4%; 
+    margin: 0 -5%;
+    background-image: url('/images/Imagen de fondo 2.png');
+    background-size: cover;
+    background-position: center;
+    border-bottom: none; /* Se elimina el borde inferior */
+}
+
+.about-text-content {
+    max-width: 45%;
+    position: relative;
+    z-index: 6;
+    margin-bottom: 300px; /* Se añade espacio inferior */
+}
+
+.section-title.left-align {
+    text-align: left;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.section-text.left-align {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+}
+
+.about-text-content .cta-button {
+    margin-top: 2rem;
+}
+
+
+/* --- Estilos de Portafolio --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.portfolio-item {
+    background-color: var(--color-background-alt);
+    height: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+
+/* --- Estilos de Clientes --- */
+.clients-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.clients-carousel img {
+    height: 45px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.clients-carousel img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* --- Estilos de Contacto --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+
+/* --- PIE DE PÁGINA --- */
+.footer {
+    padding: 3rem 5%;
+    background-color: var(--color-text-dark);
+    color: #fff;
+    border-bottom: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-column h4 {
+    margin: 0 0 1rem 0;
+    color: var(--color-logo-cyan);
+}
+
+.footer-column a, .footer-column p {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+/* ========================================================== */
+/* --- ESTILOS PARA EL BLOQUE UNIFICADO --- */
+/* ========================================================== */
+
+/* --- Estilos de Estadísticas --- */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 100px auto; /* Espacio debajo de las estadísticas */
+    color: var(--color-text-dark);
+}
+
+.stat-item .stat-number {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--color-logo-cyan);
+    display: block;
+}
+
+.stat-item .stat-label {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+/* --- Estilos de Servicios (Nuevo Diseño) --- */
+.services-new {
+    padding: 100px 0; 
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: start; /* Alinea las tarjetas al inicio de su celda en la grid */
+    padding: 40px 0;  /* Añade espacio vertical para el efecto de desfase */
+}
+
+.service-card-new {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.service-card-new .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1.5rem;
+}
+
+.service-card-new h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: var(--color-text-dark);
+}
+
+.service-card-new p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* --- Estilos de Tecnologías (Carrusel) --- */
+.tech-carousel-container {
+    margin-top: 100px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.tech-logos {
+    display: flex;
+    width: max-content; /* El contenedor se ajustará a sus hijos */
+}
+
+.logo-set {
+    display: flex; /* Nuevo: para alinear los logos dentro de cada set */
+    align-items: center; /* Centra los logos verticalmente */
+    animation: scroll 40s linear infinite; /* Movemos la animación aquí */
+}
+
+.tech-logos img {
+    height: 40px;
+    width: auto;
+    margin: 0 40px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+/* Animación del carrusel */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%); /* Animamos el 100% del ancho de un set */
+    }
+}
+
+/* --- ESTILOS PARA EL DESFASE DE TARJETAS DE SERVICIO --- */
+.service-card-new:nth-child(1) {
+    transform: translateY(0);
+}
+.service-card-new:nth-child(2) {
+    transform: translateY(50px);
+}
+.service-card-new:nth-child(3) {
+    transform: translateY(0px);
+}
+.service-card-new:nth-child(4) {
+    transform: translateY(50px);
+}
+
+/* --- ESTILOS HOVER PARA ENLACES DE NAVEGACIÓN (CORREGIDO) --- */
+.nav-links a:hover {
+    color: var(--color-logo-blue);
+}
+.nav-links li:nth-child(3) a:hover {
+    color: var(--color-logo-blue);
+    transform: translateY(-3px);
+}
+
+/* --- EFECTO DE SALTO PARA LAS TARJETAS DE SERVICIO (CORREGIDO) --- */
+.service-card-new:hover {
+    box-shadow: 0 12px 45px 0 rgba(31, 38, 135, 0.2);
+}
+.service-card-new:nth-child(1):hover {
+    transform: translateY(-10px);
+}
+.service-card-new:nth-child(2):hover {
+    transform: translateY(40px);
+}
+.service-card-new:nth-child(3):hover {
+    transform: translateY(-10px);
+}
+.service-card-new:nth-child(4):hover {
+    transform: translateY(40px);
+}
+
+/* ========================================================== */
+/* --- ESTILOS PARA EL MENÚ DE HAMBURGUESA (MEJORADO) --- */
+/* ========================================================== */
+
+.hamburger-menu {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001; /* Asegura que esté por encima de todo */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación del ícono a una 'X' cuando está activo */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background); /* Fondo sólido */
+    position: fixed;
+    top: 80px; /* Ajustar a la altura del header si es necesario */
+    left: 100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: left 0.4s ease-in-out;
+    z-index: 1000; /* Justo debajo del ícono 'X' */
+}
+
+.mobile-nav-links.active {
+    left: 0; /* Se desliza a la vista */
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-size: 1.8rem;
+    font-weight: 600;
+    opacity: 0; /* Ocultos para animar su aparición */
+    transform: translateY(20px);
+}
+
+/* Animación escalonada de los enlaces cuando el menú está activo */
+.mobile-nav-links.active a {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.mobile-nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav-links.active a:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav-links.active a:nth-child(6) { transition-delay: 0.35s; }
+
+
+/* ========================================================== */
+/* --- MEDIA QUERIES (REGLAS PARA DIFERENTES PANTALLAS) --- */
+/* ========================================================== */
+
+/* --- PARA TABLETS (Hasta 1024px) --- */
+@media (max-width: 1024px) {
+    .hero-pretitle, .hero-title {
+        font-size: 4rem;
+    }
+    .about-text-content {
+        max-width: 55%;
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- PARA CELULARES (Hasta 768px) --- */
+@media (max-width: 768px) {
+    .main-content, .header {
+        padding: 0 5%;
+    }
+    .header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    /* --- NAVEGACIÓN EN MÓVIL --- */
+    .nav-links {
+        display: none; /* Ocultamos el menú de escritorio */
+    }
+    .hamburger-menu {
+        display: flex; /* Mostramos el ícono de hamburguesa */
+    }
+
+    /* --- SECCIONES PRINCIPALES --- */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3rem;
+    }
+    .hero-text {
+        max-width: 100%;
+        padding-top: 0;
+        align-items: center;
+    }
+    .hero-pretitle, .hero-title {
+        font-size: 2.8rem;
+    }
+    .hero-animation-container {
+        width: 100%;
+        height: 40vh; /* MODIFICADO: Aumentamos un poco la altura */
+        margin-top: 2rem;
+    }
+    .about-section {
+        margin: 0 -5%;
+        background-image: none; /* MODIFICADO: Ocultamos la imagen de fondo en móviles */
+    }
+    .about-text-content {
+        max-width: 100%;
+        margin-bottom: 4rem; /* MODIFICADO: Reducimos el margen inferior */
+    }
+    .stats-container {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 0; /* MODIFICADO: Quitamos el margen inferior */
+    }
+    .section-title, .section-title.left-align {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .section-text, .section-text.left-align {
+        text-align: center;
+    }
+
+    .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card-new, .service-card-new:nth-child(even), .service-card-new:nth-child(odd) {
+       transform: translateY(0) !important;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
