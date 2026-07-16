@@ -41,11 +41,13 @@ export default function ContactSection() {
 
   return (
     <section id="contacto" className="page-section">
-      <h2 className="section-title">Envíanos tu consulta</h2>
-      <p className="section-text">Y comencemos a trabajar juntos.</p>
+      <h2 className="section-title">Hablemos de tu proyecto</h2>
+      <p className="section-text">
+        Cuéntanos qué necesitas y te responderemos en menos de 24 horas.
+      </p>
       {status === 'success' ? (
-        <p style={{ textAlign: 'center', color: '#00D9A8', fontWeight: 600 }}>
-          ¡Mensaje enviado con éxito! Te contactaremos pronto.
+        <p className="section-text" style={{ color: 'var(--color-text)' }}>
+          Mensaje recibido. Te contactaremos pronto.
         </p>
       ) : (
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -64,22 +66,27 @@ export default function ContactSection() {
           <input type="tel" name="telefono" placeholder="Teléfono" />
           <textarea
             name="mensaje"
-            placeholder="Mensaje"
-            rows={5}
+            placeholder="Cuéntanos sobre tu proyecto"
+            rows={4}
             required
           ></textarea>
           {status === 'error' && (
-            <p style={{ color: 'red', fontSize: '0.9rem', margin: 0 }}>
-              Error al enviar. Intenta de nuevo.
+            <p style={{ color: 'var(--color-text)', fontSize: '0.875rem', margin: 0 }}>
+              Ocurrió un error al enviar. Intenta de nuevo.
             </p>
           )}
-          <button
-            type="submit"
-            className="cta-button"
-            disabled={status === 'sending'}
-          >
-            {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
-          </button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <button
+              type="submit"
+              className="cta-button"
+              disabled={status === 'sending'}
+            >
+              {status === 'sending' ? 'Enviando...' : 'Solicitar Propuesta'}
+            </button>
+            <span style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)' }}>
+              Tus datos están protegidos. No compartimos información.
+            </span>
+          </div>
         </form>
       )}
     </section>

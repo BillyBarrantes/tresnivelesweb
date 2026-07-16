@@ -3,38 +3,41 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Tres Niveles - Desarrollo Web y IA",
-    template: "%s | Tres Niveles",
+    default: "3N Tres Niveles — Software, Automatización e IA",
+    template: "%s | 3N Tres Niveles",
   },
   description:
-    "Creamos soluciones de software y automatización a la medida para que tu empresa crezca. Desarrollo Web, Automatización de Procesos, Agentes IA.",
+    "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible en tu empresa.",
   openGraph: {
-    title: "Tres Niveles - Desarrollo Web y IA",
+    title: "3N Tres Niveles — Software, Automatización e IA",
     description:
-      "Creamos soluciones de software y automatización a la medida para que tu empresa crezca.",
+      "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible en tu empresa.",
     url: "https://tresniveles.com",
-    siteName: "Tres Niveles",
-    locale: "es_ES",
+    siteName: "3N Tres Niveles",
+    locale: "es_PE",
     type: "website",
     images: [
       {
         url: "/images/Logo3N.png",
-        width: 1200,
-        height: 630,
-        alt: "Tres Niveles",
+        width: 922,
+        height: 296,
+        alt: "3N Tres Niveles",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tres Niveles - Desarrollo Web y IA",
+    title: "3N Tres Niveles — Software, Automatización e IA",
     description:
-      "Creamos soluciones de software y automatización a la medida para que tu empresa crezca.",
+      "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible.",
   },
   metadataBase: new URL('https://tresniveles.com'),
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: '/favicon.svg',
   },
 };
 
