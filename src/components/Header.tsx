@@ -12,9 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="#inicio" className="logo">
-          <img src="/images/Logo3N.png" alt="3N" />
-        </a>
+        <a href="#inicio" className="logo-wordmark">3N</a>
 
         <ul className="nav-links">
           <li><a href="#inicio">Inicio</a></li>

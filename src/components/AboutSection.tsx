@@ -1,19 +1,14 @@
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="page-section about-section">
-      <div className="about-text-content">
-        <h2 className="section-title left-align">
-          Tecnología que funciona<br />para negocios que crecen
-        </h2>
-        <p className="section-text left-align">
-          En 3N construimos software a medida, automatizamos procesos
-          operativos complejos y aplicamos inteligencia artificial donde
-          realmente genera valor. Trabajamos con empresas que necesitan
-          soluciones sólidas, no promesas.
-        </p>
-      </div>
-
-      <div id="servicios" className="capabilities-grid">
+    <section id="servicios" className="page-section">
+      <h2 className="section-title">
+        Así construimos soluciones<br />que sí funcionan
+      </h2>
+      <p className="section-subtitle">
+        No vendemos tecnología abstracta. Construimos herramientas digitales
+        diseñadas para los procesos reales de tu empresa.
+      </p>
+      <div className="capabilities-grid">
         <div className="capability-card">
           <h3>Software Engineering</h3>
           <p>
@@ -43,7 +38,6 @@ export default function AboutSection() {
           </p>
         </div>
       </div>
-
       <div className="tech-logos">
         <img src="/images/python.svg" alt="Python" />
         <img src="/images/nodejs.svg" alt="Node.js" />

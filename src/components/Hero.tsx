@@ -13,7 +13,12 @@ export default function Hero() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
+            const reveals = entry.target.querySelectorAll('.reveal');
+            reveals.forEach((el, i) => {
+              setTimeout(() => {
+                (el as HTMLElement).classList.add('is-visible');
+              }, i * 100);
+            });
             observer.unobserve(entry.target);
           }
         });
@@ -21,8 +26,7 @@ export default function Hero() {
       { threshold: 0.1 }
     );
 
-    const elements = section.querySelectorAll('.hero-fade');
-    elements.forEach((el) => observer.observe(el));
+    observer.observe(section);
 
     return () => observer.disconnect();
   }, []);
@@ -30,26 +34,23 @@ export default function Hero() {
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
       <div className="hero-text">
-        <p className="hero-pretitle hero-fade">Desarrollo de Software & IA</p>
-        <h1 className="hero-title hero-fade">
-          Construimos software que<br />resuelve problemas reales
+        <p className="hero-pretitle reveal">Desarrollo de Software & IA</p>
+        <h1 className="hero-title reveal">
+          El software debería resolver<br />problemas, no crearlos
         </h1>
-        <p className="hero-subtitle hero-fade">
-          Automatizamos procesos operativos, desarrollamos plataformas web
-          avanzadas e implementamos inteligencia artificial con impacto medible
-          en tu operación.
+        <p className="hero-subtitle reveal">
+          Desarrollamos software a medida, automatizamos procesos e
+          implementamos inteligencia artificial donde realmente genera valor
+          — sin promesas vacías, sin integraciones frágiles, sin código
+          abandonado.
         </p>
-        <a href="#contacto" className="cta-button hero-fade">
-          Agendar Auditoría de Procesos
-        </a>
-      </div>
-
-      <div className="hero-visual hero-fade" aria-hidden="true">
-        <div className="hero-visual-inner">
-          <div className="hero-visual-ring"></div>
-          <div className="hero-visual-dot"></div>
-          <div className="hero-visual-dot"></div>
-          <div className="hero-visual-dot"></div>
+        <div className="hero-actions reveal">
+          <a href="#contacto" className="cta-button">
+            Agendar Auditoría de Procesos
+          </a>
+          <a href="#proceso" className="hero-cta-secondary">
+            Conoce nuestra metodología
+          </a>
         </div>
       </div>
     </section>
