@@ -46,7 +46,7 @@ export default function ContactSection() {
       </p>
       {status === 'success' ? (
         <p className="section-text" style={{ color: 'var(--color-text)' }}>
-          Mensaje recibido. Te contactaremos pronto.
+          Recibimos tu mensaje. Te enviaremos una propuesta ajustada a lo que nos cuentas.
         </p>
       ) : (
         <>
@@ -61,7 +61,7 @@ export default function ContactSection() {
           </div>
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Sin llamadas de venta agresivas</span>
+            <span>Soporte post-implementación incluido</span>
           </div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>

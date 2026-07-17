@@ -72,8 +72,9 @@ export default function PainSection() {
       <div className="pain-pullquote reveal">
         <div className="pain-pullquote-line"></div>
         <p>
-          Trabajamos con equipos reducidos, entregas planificadas y
-          documentación incluida en cada proyecto.
+          Cada uno de estos problemas tiene una respuesta directa:
+          entregas con documentación, integraciones con respaldo
+          y código que no se abandona después de la firma.
         </p>
       </div>
     </section>

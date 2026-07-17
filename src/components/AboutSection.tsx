@@ -55,6 +55,17 @@ export default function AboutSection() {
           </div>
         ))}
       </div>
+      <div className="ai-highlight">
+        <h3>Inteligencia artificial aplicada al negocio</h3>
+        <p>
+          No implementamos IA por moda. Identificamos procesos donde
+          un modelo de lenguaje, un agente conversacional o un sistema
+          predictivo puede reducir costos operativos o acelerar decisiones
+          de negocio. Trabajamos con modelos de lenguaje comerciales y
+          abiertos — según lo que mejor se ajuste a cada caso — integrados
+          directamente a tu operación existente.
+        </p>
+      </div>
       <h3 className="subsection-heading">Así trabajamos</h3>
       <div className="process-inline">
         {steps.map((step, i) => (
