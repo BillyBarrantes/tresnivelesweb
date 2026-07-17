@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
       <div className="hero-text">
-        <p className="hero-pretitle reveal">Software, automatización y BI aplicado</p>
+        <p className="hero-pretitle reveal">Software, automatización y BI</p>
         <h1 className="hero-title reveal">
           Convertimos operación, datos e IA en sistemas que sí trabajan.
         </h1>
@@ -58,44 +58,45 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-product reveal" aria-label="Panel operativo de Tres Niveles">
-        <div className="product-panel-header">
-          <div>
-            <span className="product-eyebrow">Panel operativo</span>
-            <h2>Resumen de implementación</h2>
-          </div>
-          <span className="product-status">Sistema activo</span>
-        </div>
-
-        <div className="product-kpi-grid">
-          <div className="product-kpi">
-            <span>Procesos mapeados</span>
-            <strong>Documentados</strong>
-          </div>
-          <div className="product-kpi">
-            <span>Integraciones</span>
-            <strong>ERP · CRM · BI</strong>
-          </div>
-        </div>
-
-        <div className="product-flow">
-          {pipelineSteps.map((step, i) => (
-            <div key={step.label} className="product-flow-step">
-              <span className="flow-index">{String(i + 1).padStart(2, '0')}</span>
-              <div>
-                <strong>{step.label}</strong>
-                <p>{step.status}</p>
-              </div>
+        <div className="hero-product-body">
+          <div className="product-panel-header">
+            <div>
+              <span className="product-eyebrow">Panel operativo</span>
+              <h2>Resumen de implementación</h2>
             </div>
-          ))}
-        </div>
+            <span className="product-status">Sistema activo</span>
+          </div>
 
-        <div className="product-insight">
-          <span className="product-insight-label">Recomendación IA</span>
-          <p>
-            Priorizar automatización del flujo con mayor fricción antes de
-            escalar reportes ejecutivos.
-          </p>
+          <div className="product-kpi-grid">
+            <div className="product-kpi">
+              <span>Procesos mapeados</span>
+              <strong>Documentados</strong>
+            </div>
+            <div className="product-kpi">
+              <span>Integraciones</span>
+              <strong>ERP · CRM · BI</strong>
+            </div>
+          </div>
 
+          <div className="product-flow">
+            {pipelineSteps.map((step, i) => (
+              <div key={step.label} className="product-flow-step">
+                <span className="flow-index">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <strong>{step.label}</strong>
+                  <p>{step.status}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="product-insight">
+            <span className="product-insight-label">Recomendación IA</span>
+            <p>
+              Priorizar automatización del flujo con mayor fricción antes de
+              escalar reportes ejecutivos.
+            </p>
+          </div>
         </div>
       </div>
     </section>

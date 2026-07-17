@@ -143,8 +143,13 @@ body {
     width: 1px;
     height: calc(100% - 1rem);
     background-color: var(--color-text);
-    opacity: 0.08;
+    opacity: 0.12;
     pointer-events: none;
+}
+
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
 }
 
 .hero-pretitle {
@@ -223,9 +228,13 @@ body {
     background: var(--color-surface);
     border: 1px solid rgba(21, 21, 18, 0.12);
     border-radius: 28px;
-    box-shadow: 0 24px 80px rgba(21, 21, 18, 0.1);
-    padding: 1rem;
+    box-shadow: 0 32px 100px rgba(21, 21, 18, 0.12);
     overflow: hidden;
+    will-change: transform;
+}
+
+.hero-product-body {
+    animation: subtleFloat 4s ease-in-out infinite;
 }
 
 .product-panel-header {
@@ -324,6 +333,13 @@ body {
     border: 1px solid rgba(21, 21, 18, 0.1);
     border-radius: 16px;
     background: #FAFAF7;
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.product-flow-step:hover {
+    border-color: rgba(21, 21, 18, 0.2);
+    box-shadow: 0 2px 12px rgba(21, 21, 18, 0.06);
+    transform: translateY(-1px);
 }
 
 .flow-index {
@@ -367,12 +383,11 @@ body {
 }
 
 .page-section {
-    padding: 100px 0;
-    border-bottom: 1px solid var(--color-border);
+    padding: 120px 0;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 500;
     color: var(--color-text);
     text-align: center;
@@ -393,7 +408,7 @@ body {
 
 .section-title.left-align {
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
 }
@@ -434,14 +449,14 @@ body {
     font-size: 2rem;
     font-weight: 600;
     color: var(--color-text-muted);
-    opacity: 0.15;
+    opacity: 0.3;
     line-height: 1;
     min-width: 2.5rem;
     flex-shrink: 0;
 }
 
 .pain-item-content h3 {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     font-weight: 500;
     color: var(--color-text);
     margin: 0 0 0.5rem 0;
@@ -479,7 +494,7 @@ body {
 
 /* ===== ABOUT SECTION - ASYMMETRIC GRID ===== */
 .about-section {
-    padding: 128px 0;
+    padding: 120px 0;
 }
 
 .about-header {
@@ -607,19 +622,6 @@ body {
     margin-top: 0.25rem;
 }
 
-.capability-tech-stack {
-    font-family: 'SF Mono', 'Menlo', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    letter-spacing: 0.02em;
-    padding-top: 1rem;
-    border-top: 1px solid var(--color-border);
-    line-height: 1;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
 .tech-pill {
     display: inline-block;
     padding: 5px 9px;
@@ -636,6 +638,31 @@ body {
 .tech-pill:hover {
     background: #E6E3DA;
     color: var(--color-text);
+}
+
+.tech-cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto 4rem;
+    max-width: 640px;
+}
+
+.tech-cluster-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.tech-cluster-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .bento-image-wrapper {
@@ -697,7 +724,7 @@ body {
     font-weight: 500;
     color: var(--color-text);
     text-align: center;
-    margin: 4rem auto 2rem;
+    margin: 3rem auto 2rem;
     letter-spacing: -0.015em;
 }
 
@@ -720,7 +747,7 @@ body {
     font-size: 2rem;
     font-weight: 600;
     color: var(--color-text);
-    opacity: 0.08;
+    opacity: 0.3;
     line-height: 1;
 }
 
@@ -748,7 +775,13 @@ body {
     display: flex;
     gap: 1.5rem;
     padding: 2rem 0;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
 }
+
+.portfolio-list-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-list-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-list-item:nth-child(3) { animation-delay: 0.3s; }
 
 .portfolio-list-item + .portfolio-list-item {
     border-top: 1px solid var(--color-border);
@@ -766,7 +799,7 @@ body {
 }
 
 .portfolio-list-content h3 {
-    font-size: 1.0625rem;
+    font-size: 1.125rem;
     font-weight: 500;
     color: var(--color-text);
     margin: 0 0 0.5rem 0;
@@ -779,12 +812,17 @@ body {
     margin: 0;
 }
 
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* ===== CLIENTS SUBTITLE ===== */
 .clients-subtitle {
     font-size: 1rem;
     color: var(--color-text-muted);
     text-align: center;
-    margin: -0.5rem auto 2.5rem;
+    margin: 0 auto 2.5rem;
     line-height: 1.5;
     font-weight: 400;
 }
@@ -825,9 +863,9 @@ body {
 .clients-carousel img {
     height: 40px;
     width: auto;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: opacity 0.2s ease;
+    filter: grayscale(80%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .clients-carousel img:hover {
@@ -838,9 +876,16 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    max-width: 520px;
-    margin: 0 auto;
     gap: 1rem;
+}
+
+.contact-form-wrapper {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 560px;
+    margin: 0 auto;
 }
 
 .contact-form input,
@@ -863,6 +908,11 @@ body {
 
 .contact-form .cta-button {
     align-self: flex-start;
+    transition: background-color 150ms cubic-bezier(0.23, 1, 0.32, 1), transform 150ms ease;
+}
+
+.contact-form .cta-button:hover {
+    transform: scale(1.02);
 }
 
 .footer {

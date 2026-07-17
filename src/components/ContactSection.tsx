@@ -50,20 +50,7 @@ export default function ContactSection() {
         </p>
       ) : (
         <>
-        <div className="contact-close">
-          <div className="contact-close-item">
-            <span className="contact-close-icon">→</span>
-            <span>Propuesta detallada sin compromiso</span>
-          </div>
-          <div className="contact-close-item">
-            <span className="contact-close-icon">→</span>
-            <span>Respuesta en máximo 2 días hábiles</span>
-          </div>
-          <div className="contact-close-item">
-            <span className="contact-close-icon">→</span>
-            <span>Soporte post-implementación incluido</span>
-          </div>
-        </div>
+        <div className="contact-form-wrapper">
         <form className="contact-form" onSubmit={handleSubmit}>
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input type="email" name="email" placeholder="Correo electrónico" required />
@@ -80,6 +67,21 @@ export default function ContactSection() {
             </button>
           </div>
         </form>
+        </div>
+        <div className="contact-close">
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Propuesta detallada sin compromiso</span>
+          </div>
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Respuesta en máximo 2 días hábiles</span>
+          </div>
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Soporte post-implementación incluido</span>
+          </div>
+        </div>
         </>
       )}
     </section>
