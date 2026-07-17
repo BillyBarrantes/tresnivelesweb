@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="hero-text">
         <p className="hero-pretitle reveal">Ingeniería de Software e IA</p>
         <h1 className="hero-title reveal">
-          El software debería resolver<br />problemas, no crearlos
+          Construimos software que resuelve problemas reales.
         </h1>
         <p className="hero-subtitle reveal">
           Software a medida, automatización de procesos e inteligencia
@@ -45,16 +45,37 @@ export default function Hero() {
         </p>
         <div className="hero-actions reveal">
           <a href="#contacto" className="cta-button">
-            Agendar Auditoría de Procesos
+            Agendar Auditoría
           </a>
           <a href="#servicios" className="hero-cta-secondary">
-            Conoce nuestra metodología
+            Ver capacidades &rarr;
           </a>
         </div>
       </div>
-      <div className="hero-visual reveal">
-        <div className="hero-visual-pattern"></div>
-        <span className="hero-visual-watermark">3N</span>
+      <div className="hero-terminal reveal">
+        <div className="terminal-header">
+          <span className="terminal-dot"></span>
+          <span className="terminal-dot"></span>
+          <span className="terminal-dot"></span>
+          <span className="terminal-label">3N_AGENT &mdash; zsh</span>
+        </div>
+        <div className="terminal-body">
+          <p className="terminal-line" style={{ '--i': '0' } as React.CSSProperties}>
+            <span className="term-ok">[OK]</span> INITIALIZING 3N_CORE_AGENT...
+          </p>
+          <p className="terminal-line" style={{ '--i': '1' } as React.CSSProperties}>
+            <span className="term-run">[RUNNING]</span> Optimizing database indexes (PostgreSQL)...
+          </p>
+          <p className="terminal-line" style={{ '--i': '2' } as React.CSSProperties}>
+            <span className="term-run">[RUNNING]</span> Deploying microservices pipeline...
+          </p>
+          <p className="terminal-line" style={{ '--i': '3' } as React.CSSProperties}>
+            <span className="term-succ">[SUCCESS]</span> AI pipeline integrated successfully.
+          </p>
+          <p className="terminal-line" style={{ '--i': '4' } as React.CSSProperties}>
+            <span className="term-succ">[SUCCESS]</span> 3N system ready. 0 errors.
+          </p>
+        </div>
       </div>
     </section>
   );

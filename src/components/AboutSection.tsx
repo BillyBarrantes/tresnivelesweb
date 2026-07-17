@@ -3,22 +3,26 @@ export default function AboutSection() {
     {
       title: 'Ingeniería de Software',
       description:
-        'Desarrollamos sistemas internos, plataformas escalables y herramientas digitales adaptadas a procesos reales de negocio. Construimos con Python, Node.js y React.',
+        'Diseño y despliegue de sistemas robustos a medida, optimizados para la escalabilidad operativa de la empresa. Arquitecturas limpias y bases de datos relacionales estables bajo entornos controlados.',
+      stack: 'Python · Node.js · PostgreSQL',
     },
     {
       title: 'Automatización de Procesos',
       description:
-        'Automatizamos tareas repetitivas y flujos operativos, integrando sistemas existentes con n8n y bases de datos en PostgreSQL.',
+        'Modelado e integración de flujos de trabajo asíncronos y automatizaciones operativas complejas. Conexión nativa de sistemas heredados mediante microservicios independientes que garantizan la continuidad del negocio.',
+      stack: 'n8n · Python · PostgreSQL',
     },
     {
-      title: 'Inteligencia Artificial',
+      title: 'Inteligencia Artificial Aplicada',
       description:
-        'Implementamos agentes de IA, asistentes conversacionales y modelos de lenguaje basados en Gemini, con impacto medible en la operación diaria.',
+        'Implementación de agentes autónomos especializados y modelos de lenguaje entrenados para resolver tareas específicas de análisis y automatización dentro del flujo operativo empresarial, reduciendo costos perceptibles.',
+      stack: 'Gemini · LLM · Python',
     },
     {
-      title: 'Plataformas Web',
+      title: 'Plataformas Web Avanzadas',
       description:
-        'Creamos experiencias web de alto rendimiento con React, Node.js y arquitectura moderna centrada en la funcionalidad y la velocidad.',
+        'Construcción de interfaces analíticas de alta densidad y rendimiento crítico. Enfoque absoluto en la velocidad percibida, accesibilidad técnica y optimización del flujo psicológico de usuario.',
+      stack: 'React · Node.js · Next.js',
     },
   ];
 
@@ -41,31 +45,28 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="servicios" className="page-section">
-      <h2 className="section-title">Cómo aportamos</h2>
-      <p className="section-subtitle">
-        No vendemos tecnología abstracta. Construimos herramientas digitales
-        diseñadas para los procesos reales de tu empresa.
-      </p>
-      <div className="capability-list">
+    <section id="servicios" className="page-section about-section">
+      <div className="about-header">
+        <h2 className="about-header-title">Capacidades Core</h2>
+        <p className="about-header-manifest">
+          No vendemos tecnología abstracta. Construimos herramientas digitales
+          diseñadas para los procesos reales de tu empresa. Hechos, no claims.
+        </p>
+      </div>
+
+      <div className="capabilities-grid">
         {capabilities.map((cap, i) => (
-          <div key={i} className="capability-item">
+          <div key={i} className={`capability-panel${i === 2 ? ' capability-panel-full' : ''}`}>
+            <span className="capability-mono-id">
+              {String(i + 1).padStart(2, '0')}
+            </span>
             <h3>{cap.title}</h3>
             <p>{cap.description}</p>
+            <span className="capability-tech-stack">{cap.stack}</span>
           </div>
         ))}
       </div>
-      <div className="ai-highlight">
-        <h3>Inteligencia artificial aplicada al negocio</h3>
-        <p>
-          No implementamos IA por moda. Identificamos procesos donde
-          un modelo de lenguaje, un agente conversacional o un sistema
-          predictivo puede reducir costos operativos o acelerar decisiones
-          de negocio. Trabajamos con modelos de lenguaje comerciales y
-          abiertos — según lo que mejor se ajuste a cada caso — integrados
-          directamente a tu operación existente.
-        </p>
-      </div>
+
       <h3 className="subsection-heading">Así trabajamos</h3>
       <div className="process-inline">
         {steps.map((step, i) => (
