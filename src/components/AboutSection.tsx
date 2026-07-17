@@ -1,4 +1,4 @@
-const coreTech = ['Python', 'Node.js', 'PostgreSQL', 'LLM', 'Power BI', 'n8n'];
+const coreTech = ['Python', 'Node.js', 'PostgreSQL', 'OpenAI', 'n8n', 'Power BI', 'APIs', 'SQL'];
 
 export default function AboutSection() {
   const capabilities = [
@@ -64,9 +64,6 @@ export default function AboutSection() {
             {i === 2 ? (
               <div className="capability-panel-inner">
                 <div>
-                  <span className="capability-mono-id">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
                   <h3>{cap.title}</h3>
                   <p>{cap.description}</p>
                   <span className="capability-outcome">{cap.outcome}</span>
@@ -81,9 +78,6 @@ export default function AboutSection() {
               </div>
             ) : (
               <>
-                <span className="capability-mono-id">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 <h3>{cap.title}</h3>
                 <p>{cap.description}</p>
                 <span className="capability-outcome">{cap.outcome}</span>

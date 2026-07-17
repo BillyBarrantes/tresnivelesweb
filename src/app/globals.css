@@ -832,7 +832,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin: -0.5rem auto 2.5rem;
+    margin: 1.5rem auto 2.5rem;
     flex-wrap: wrap;
 }
 

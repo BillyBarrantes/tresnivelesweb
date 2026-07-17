@@ -41,7 +41,7 @@ export default function ContactSection() {
     <section id="contacto" className="page-section">
       <h2 className="section-title">¿Listo para empezar?</h2>
       <p className="section-text">
-        Cuéntanos sobre tu proyecto. Te enviaremos una propuesta detallada,
+        Cuéntanos sobre tu operación. Recibirás una propuesta detallada
         sin compromiso.
       </p>
       {status === 'success' ? (
