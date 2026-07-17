@@ -49,6 +49,21 @@ export default function ContactSection() {
           Mensaje recibido. Te contactaremos pronto.
         </p>
       ) : (
+        <>
+        <div className="contact-close">
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Propuesta detallada sin compromiso</span>
+          </div>
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Respuesta en máximo 2 días hábiles</span>
+          </div>
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Sin llamadas de venta agresivas</span>
+          </div>
+        </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input type="email" name="email" placeholder="Correo electrónico" required />
@@ -63,11 +78,9 @@ export default function ContactSection() {
             <button type="submit" className="cta-button" disabled={status === 'sending'}>
                {status === 'sending' ? 'Enviando...' : 'Solicitar Propuesta'}
             </button>
-            <span style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)' }}>
-              Sin compromiso. Recibirás una propuesta detallada.
-            </span>
           </div>
         </form>
+        </>
       )}
     </section>
   );

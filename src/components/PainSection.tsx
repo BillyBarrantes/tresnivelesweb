@@ -58,14 +58,23 @@ export default function PainSection() {
         Tres problemas que el software debería resolver — y que siguen
         frenando a empresas como la tuya.
       </p>
-      <div className="pain-grid">
+      <div className="pain-list">
         {pains.map((pain, i) => (
-          <div key={i} className={`pain-card reveal reveal-delay-${i + 1}`}>
-            <span className="pain-number">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{pain.title}</h3>
-            <p>{pain.description}</p>
+          <div key={i} className="pain-item reveal">
+            <span className="pain-item-number">{String(i + 1).padStart(2, '0')}</span>
+            <div className="pain-item-content">
+              <h3>{pain.title}</h3>
+              <p>{pain.description}</p>
+            </div>
           </div>
         ))}
+      </div>
+      <div className="pain-pullquote reveal">
+        <div className="pain-pullquote-line"></div>
+        <p>
+          Trabajamos con equipos reducidos, entregas planificadas y
+          documentación incluida en cada proyecto.
+        </p>
       </div>
     </section>
   );
