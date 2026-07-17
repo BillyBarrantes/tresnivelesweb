@@ -47,7 +47,7 @@ export default function Hero() {
           <a href="#contacto" className="cta-button">
             Agendar Auditoría de Procesos
           </a>
-          <a href="#proceso" className="hero-cta-secondary">
+          <a href="#servicios" className="hero-cta-secondary">
             Conoce nuestra metodología
           </a>
         </div>
