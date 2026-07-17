@@ -4,6 +4,12 @@ import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const navItems = [
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#servicios', label: 'Soluciones' },
+    { href: '#portafolio', label: 'Proyectos' },
+    { href: '#clientes', label: 'Clientes' },
+  ];
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -34,14 +40,17 @@ export default function Header() {
           <a href="#inicio" className="logo-wordmark">3N</a>
 
           <ul className="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
-            <li><a href="#clientes">Clientes</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))}
           </ul>
         </div>
+
+        <a href="#contacto" className="header-cta">
+          Evaluar mi operación
+        </a>
 
         <div
           className={`hamburger-menu ${isOpen ? 'active' : ''}`}
@@ -54,12 +63,14 @@ export default function Header() {
       </nav>
 
       <div className={`mobile-nav-links ${isOpen ? 'active' : ''}`}>
-        <a href="#inicio" onClick={handleLinkClick}>Inicio</a>
-        <a href="#nosotros" onClick={handleLinkClick}>Nosotros</a>
-        <a href="#servicios" onClick={handleLinkClick}>Servicios</a>
-        <a href="#portafolio" onClick={handleLinkClick}>Portafolio</a>
-        <a href="#clientes" onClick={handleLinkClick}>Clientes</a>
-        <a href="#contacto" onClick={handleLinkClick}>Contacto</a>
+        {navItems.map((item) => (
+          <a key={item.href} href={item.href} onClick={handleLinkClick}>
+            {item.label}
+          </a>
+        ))}
+        <a href="#contacto" onClick={handleLinkClick}>
+          Evaluar mi operación
+        </a>
       </div>
     </header>
   );

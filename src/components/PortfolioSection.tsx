@@ -1,32 +1,32 @@
-const projects = [
-  {
-    title: 'Sistemas de Gestión Interna',
-    description:
-      'ERPs modulares, dashboards operativos, sistemas de inventario y seguimiento de producción diseñados a la medida del negocio.',
-  },
-  {
-    title: 'Plataformas Web Transaccionales',
-    description:
-      'Portales corporativos, marketplaces, integración de APIs y sistemas con alto volumen de datos y usuarios concurrentes.',
-  },
-  {
-    title: 'Asistentes con IA Conversacional',
-    description:
-      'Chatbots inteligentes, agentes virtuales de atención al cliente y automatización de respuestas basadas en modelos de lenguaje.',
-  },
-];
-
 export default function PortfolioSection() {
+  const items = [
+    {
+      title: 'Arquitectura documentada',
+      description:
+        'Cada sistema se entrega con documentación técnica, tests automatizados y procedimientos de deploy. Tu equipo puede operarlo sin depender de nosotros.',
+    },
+    {
+      title: 'Integración trazable',
+      description:
+        'Conexión con sistemas existentes mediante APIs documentadas. Rollback y validación en cada cambio sin interrumpir la operación activa.',
+    },
+    {
+      title: 'IA con función operativa',
+      description:
+        'Modelos integrados a tareas reales: clasificación, extracción y análisis. Sin prototipos, sin demos sin uso — solo implementación útil.',
+    },
+  ];
+
   return (
     <section id="portafolio" className="page-section">
-      <h2 className="section-title">Lo que construimos</h2>
+      <h2 className="section-title">Implementación confiable</h2>
       <div className="portfolio-list">
-        {projects.map((project, i) => (
+        {items.map((item, i) => (
           <div key={i} className="portfolio-list-item">
             <span className="portfolio-list-number">{String(i + 1).padStart(2, '0')}</span>
             <div className="portfolio-list-content">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           </div>
         ))}

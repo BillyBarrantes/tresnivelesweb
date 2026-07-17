@@ -76,7 +76,7 @@ export default function ContactSection() {
           )}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <button type="submit" className="cta-button" disabled={status === 'sending'}>
-               {status === 'sending' ? 'Enviando...' : 'Solicitar Propuesta'}
+               {status === 'sending' ? 'Enviando...' : 'Solicitar evaluación'}
             </button>
           </div>
         </form>

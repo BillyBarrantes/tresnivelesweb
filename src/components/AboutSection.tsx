@@ -1,28 +1,32 @@
 export default function AboutSection() {
   const capabilities = [
     {
-      title: 'Ingeniería de Software',
+      title: 'Software operativo',
       description:
-        'Diseño y despliegue de sistemas robustos a medida, optimizados para la escalabilidad operativa de la empresa. Arquitecturas limpias y bases de datos relacionales estables bajo entornos controlados.',
-      stack: 'Python · Node.js · PostgreSQL',
+        'Sistemas internos, portales y herramientas a medida para ordenar procesos que hoy dependen de hojas, mensajes o tareas manuales.',
+      outcome: 'Menos fricción entre áreas',
+      stack: 'Next.js · Node.js · PostgreSQL',
     },
     {
       title: 'Automatización de Procesos',
       description:
-        'Modelado e integración de flujos de trabajo asíncronos y automatizaciones operativas complejas. Conexión nativa de sistemas heredados mediante microservicios independientes que garantizan la continuidad del negocio.',
+        'Flujos que conectan tareas, alertas, aprobaciones y sistemas existentes sin interrumpir la operación actual.',
+      outcome: 'Operación más predecible',
       stack: 'n8n · Python · PostgreSQL',
     },
     {
-      title: 'Inteligencia Artificial Aplicada',
+      title: 'IA aplicada al negocio',
       description:
-        'Implementación de agentes autónomos especializados y modelos de lenguaje entrenados para resolver tareas específicas de análisis y automatización dentro del flujo operativo empresarial, reduciendo costos perceptibles.',
-      stack: 'Gemini · LLM · Python',
+        'Agentes y modelos integrados a tareas reales: análisis, soporte, clasificación, extracción de información y asistencia operativa.',
+      outcome: 'IA con función concreta',
+      stack: 'LLM · Python · APIs',
     },
     {
-      title: 'Plataformas Web Avanzadas',
+      title: 'Analítica y BI',
       description:
-        'Construcción de interfaces analíticas de alta densidad y rendimiento crítico. Enfoque absoluto en la velocidad percibida, accesibilidad técnica y optimización del flujo psicológico de usuario.',
-      stack: 'React · Node.js · Next.js',
+        'Dashboards, reportes y modelos de datos para convertir información dispersa en decisiones claras y accionables.',
+      outcome: 'Decisiones con evidencia',
+      stack: 'Power BI · SQL · Dashboards',
     },
   ];
 
@@ -47,24 +51,55 @@ export default function AboutSection() {
   return (
     <section id="servicios" className="page-section about-section">
       <div className="about-header">
-        <h2 className="about-header-title">Capacidades Core</h2>
+        <span className="section-kicker">Soluciones</span>
+        <h2 className="about-header-title">Capacidades para operar mejor.</h2>
         <p className="about-header-manifest">
-          No vendemos tecnología abstracta. Construimos herramientas digitales
-          diseñadas para los procesos reales de tu empresa. Hechos, no claims.
+          3N combina software, automatización, analítica e IA para resolver
+          problemas concretos de operación. Menos discurso tecnológico, más
+          sistemas que sostienen el trabajo diario.
         </p>
       </div>
 
       <div className="capabilities-grid">
-        {capabilities.map((cap, i) => (
-          <div key={i} className={`capability-panel${i === 2 ? ' capability-panel-full' : ''}`}>
-            <span className="capability-mono-id">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3>{cap.title}</h3>
-            <p>{cap.description}</p>
-            <span className="capability-tech-stack">{cap.stack}</span>
-          </div>
-        ))}
+        {capabilities.map((cap, i) => {
+          const pills = cap.stack.split(' · ').map((t, j) => (
+            <span key={j} className="tech-pill">{t}</span>
+          ));
+          return (
+            <div key={i} className={`capability-panel${i >= 2 ? ' capability-panel-full' : ''}`}>
+              {i === 2 ? (
+                <div className="capability-panel-inner">
+                  <div>
+                    <span className="capability-mono-id">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3>{cap.title}</h3>
+                    <p>{cap.description}</p>
+                    <span className="capability-outcome">{cap.outcome}</span>
+                    <div className="capability-tech-stack">{pills}</div>
+                  </div>
+                  <div className="bento-image-wrapper">
+                    <div className="solution-mini-panel">
+                      <span>Flujo recomendado</span>
+                      <strong>Detectar → Automatizar → Medir</strong>
+                      <p>La IA entra después de entender el proceso, no antes.</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span className="capability-mono-id">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3>{cap.title}</h3>
+                  <p>{cap.description}</p>
+                  <span className="capability-outcome">{cap.outcome}</span>
+                  <div className="capability-tech-stack">{pills}</div>
+                </>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <h3 className="subsection-heading">Así trabajamos</h3>

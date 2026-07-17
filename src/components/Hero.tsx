@@ -4,6 +4,11 @@ import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const pipelineSteps = [
+    { label: 'Datos operativos', status: 'Conectado' },
+    { label: 'Flujo automatizado', status: 'En operación' },
+    { label: 'Reporte ejecutivo', status: 'Listo' },
+  ];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -34,47 +39,63 @@ export default function Hero() {
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
       <div className="hero-text">
-        <p className="hero-pretitle reveal">Ingeniería de Software e IA</p>
+        <p className="hero-pretitle reveal">Software, automatización y BI aplicado</p>
         <h1 className="hero-title reveal">
-          Construimos software que resuelve problemas reales.
+          Convertimos operación, datos e IA en sistemas que sí trabajan.
         </h1>
         <p className="hero-subtitle reveal">
-          Software a medida, automatización de procesos e inteligencia
-          artificial aplicada directamente a tu operación real. Sin promesas
-          de marketing, sin integraciones que fallen.
+          Diseñamos software a medida, automatizaciones y analítica para que
+          tu empresa ordene procesos, conecte sistemas y tome decisiones con
+          información confiable.
         </p>
         <div className="hero-actions reveal">
           <a href="#contacto" className="cta-button">
-            Agendar Auditoría
+            Evaluar mi operación
           </a>
           <a href="#servicios" className="hero-cta-secondary">
-            Ver capacidades &rarr;
+            Ver soluciones
           </a>
         </div>
       </div>
-      <div className="hero-terminal reveal">
-        <div className="terminal-header">
-          <span className="terminal-dot"></span>
-          <span className="terminal-dot"></span>
-          <span className="terminal-dot"></span>
-          <span className="terminal-label">3N_AGENT &mdash; zsh</span>
+      <div className="hero-product reveal" aria-label="Panel operativo de Tres Niveles">
+        <div className="product-panel-header">
+          <div>
+            <span className="product-eyebrow">Panel operativo</span>
+            <h2>Resumen de implementación</h2>
+          </div>
+          <span className="product-status">Sistema activo</span>
         </div>
-        <div className="terminal-body">
-          <p className="terminal-line" style={{ '--i': '0' } as React.CSSProperties}>
-            <span className="term-ok">[OK]</span> INITIALIZING 3N_CORE_AGENT...
+
+        <div className="product-kpi-grid">
+          <div className="product-kpi">
+            <span>Procesos mapeados</span>
+            <strong>Documentados</strong>
+          </div>
+          <div className="product-kpi">
+            <span>Integraciones</span>
+            <strong>ERP · CRM · BI</strong>
+          </div>
+        </div>
+
+        <div className="product-flow">
+          {pipelineSteps.map((step, i) => (
+            <div key={step.label} className="product-flow-step">
+              <span className="flow-index">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <strong>{step.label}</strong>
+                <p>{step.status}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="product-insight">
+          <span className="product-insight-label">Recomendación IA</span>
+          <p>
+            Priorizar automatización del flujo con mayor fricción antes de
+            escalar reportes ejecutivos.
           </p>
-          <p className="terminal-line" style={{ '--i': '1' } as React.CSSProperties}>
-            <span className="term-run">[RUNNING]</span> Optimizing database indexes (PostgreSQL)...
-          </p>
-          <p className="terminal-line" style={{ '--i': '2' } as React.CSSProperties}>
-            <span className="term-run">[RUNNING]</span> Deploying microservices pipeline...
-          </p>
-          <p className="terminal-line" style={{ '--i': '3' } as React.CSSProperties}>
-            <span className="term-succ">[SUCCESS]</span> AI pipeline integrated successfully.
-          </p>
-          <p className="terminal-line" style={{ '--i': '4' } as React.CSSProperties}>
-            <span className="term-succ">[SUCCESS]</span> 3N system ready. 0 errors.
-          </p>
+
         </div>
       </div>
     </section>
