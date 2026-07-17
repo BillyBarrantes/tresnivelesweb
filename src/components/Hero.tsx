@@ -33,7 +33,6 @@ export default function Hero() {
 
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
-      <div className="hero-line"></div>
       <div className="hero-text">
         <p className="hero-pretitle reveal">Ingeniería de Software e IA</p>
         <h1 className="hero-title reveal">
@@ -52,6 +51,10 @@ export default function Hero() {
             Conoce nuestra metodología
           </a>
         </div>
+      </div>
+      <div className="hero-visual reveal">
+        <div className="hero-visual-pattern"></div>
+        <span className="hero-visual-watermark">3N</span>
       </div>
     </section>
   );

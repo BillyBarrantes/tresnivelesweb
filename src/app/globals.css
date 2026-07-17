@@ -23,18 +23,33 @@ body {
 }
 
 .header {
-    background-color: var(--color-surface);
-    padding: 1rem 5%;
-    border-bottom: 1px solid var(--color-line);
+    height: 52px;
+    padding: 0 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+}
+
+.header--scrolled {
+    border-bottom-color: var(--color-line);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 .logo-wordmark {
@@ -58,7 +73,7 @@ body {
     text-decoration: none;
     color: var(--color-text-muted);
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     transition: color 0.2s ease;
 }
 
@@ -73,18 +88,60 @@ body {
 .hero {
     display: flex;
     align-items: center;
-    min-height: 75vh;
+    gap: 5%;
+    min-height: 80vh;
     padding-top: 2vh;
     position: relative;
 }
 
 .hero-text {
-    max-width: 640px;
+    flex: 1.2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 2;
+}
+
+.hero-text::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 1px;
+    height: calc(100% - 1rem);
+    background-color: var(--color-text);
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.hero-visual {
+    flex: 0.8;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-text);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-visual-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+}
+
+.hero-visual-watermark {
+    font-size: 6rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.02);
+    letter-spacing: -0.03em;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
 }
 
 .hero-pretitle {
@@ -198,19 +255,6 @@ body {
     margin-left: 0;
     margin-right: 0;
     max-width: 540px;
-}
-
-/* ===== HERO LINE ===== */
-.hero-line {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 50%;
-    background-color: var(--color-text);
-    opacity: 0.04;
-    pointer-events: none;
 }
 
 /* ===== PAIN STACKED ===== */
@@ -638,6 +682,13 @@ body {
     .hero-text {
         max-width: 100%;
         align-items: center;
+    }
+    .hero-text::before {
+        display: none;
+    }
+    .hero-visual {
+        width: 100%;
+        max-height: 200px;
     }
     .hero-title {
         font-size: 2.5rem;

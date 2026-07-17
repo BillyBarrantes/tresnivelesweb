@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,19 +9,39 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const hero = document.getElementById('inicio');
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const header = document.querySelector('.header');
+        if (header) {
+          header.classList.toggle('header--scrolled', !entry.isIntersecting);
+        }
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="#inicio" className="logo-wordmark">3N</a>
+        <div className="navbar-left">
+          <a href="#inicio" className="logo-wordmark">3N</a>
 
-        <ul className="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#portafolio">Portafolio</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
+          <ul className="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
 
         <div
           className={`hamburger-menu ${isOpen ? 'active' : ''}`}
