@@ -1,13 +1,15 @@
+import Image from 'next/image';
+
 export default function ClientsSection() {
   return (
     <section id="clientes" className="page-section">
-      <h2 className="section-title">Nuestros Clientes</h2>
+      <h2 className="section-title">Clientes</h2>
       <div className="clients-carousel">
-        <img src="/images/interamericana.png" alt="Logo de Interamericana" />
-        <img src="/images/logo_AGP.svg" alt="Logo de AGP" />
-        <img src="/images/Logo_American.png" alt="Logo de American" />
-        <img src="/images/logo_Miguelito.png" alt="Logo de Miguelito" />
-        <img src="/images/Logo_Tradesur.png" alt="Logo de Tradesur" />
+        <Image src="/images/interamericana.png" alt="Logo de Interamericana" width={180} height={40} />
+        <Image src="/images/logo_AGP.svg" alt="Logo de AGP" width={100} height={40} />
+        <Image src="/images/Logo_American.png" alt="Logo de American" width={180} height={40} />
+        <Image src="/images/logo_Miguelito.png" alt="Logo de Miguelito" width={180} height={40} />
+        <Image src="/images/Logo_Tradesur.png" alt="Logo de Tradesur" width={180} height={40} />
       </div>
     </section>
   );

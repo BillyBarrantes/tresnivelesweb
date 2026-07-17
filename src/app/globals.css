@@ -57,8 +57,8 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--color-text-muted);
-    font-weight: 500;
-    font-size: 0.9375rem;
+    font-weight: 400;
+    font-size: 0.875rem;
     transition: color 0.2s ease;
 }
 
@@ -73,13 +73,13 @@ body {
 .hero {
     display: flex;
     align-items: center;
-    min-height: 85vh;
+    min-height: 75vh;
     padding-top: 2vh;
     position: relative;
 }
 
 .hero-text {
-    max-width: 700px;
+    max-width: 640px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,15 +89,15 @@ body {
 
 .hero-pretitle {
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-text-muted);
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
     line-height: 1.1;
     margin: 0 0 1.5rem 0;
@@ -106,18 +106,18 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
     color: var(--color-text-muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 400;
     line-height: 1.7;
-    max-width: 600px;
+    max-width: 540px;
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .cta-button {
@@ -163,7 +163,7 @@ body {
     color: var(--color-text);
     text-align: center;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
@@ -172,9 +172,9 @@ body {
     font-size: 1.0625rem;
     color: var(--color-text-muted);
     max-width: 560px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 2.5rem auto;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .section-title.left-align {
@@ -187,10 +187,10 @@ body {
 .section-text {
     font-size: 1.0625rem;
     color: var(--color-text-muted);
-    max-width: 600px;
+    max-width: 560px;
     margin: 0 auto 2.5rem auto;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .section-text.left-align {
@@ -224,7 +224,7 @@ body {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.75rem;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -234,9 +234,9 @@ body {
 }
 
 .capability-card h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-text);
 }
 
@@ -253,7 +253,7 @@ body {
     gap: 2.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .tech-logos img {
@@ -280,7 +280,7 @@ body {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.75rem;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -291,9 +291,9 @@ body {
 
 .pain-card h3 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-text);
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .pain-card p {
@@ -304,10 +304,10 @@ body {
 }
 
 .pain-number {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 600;
     color: var(--color-text-muted);
-    opacity: 0.3;
+    opacity: 0.2;
     display: block;
     margin-bottom: 1rem;
     line-height: 1;
@@ -327,7 +327,7 @@ body {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.75rem;
     position: relative;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
@@ -339,10 +339,11 @@ body {
 
 .process-step::before {
     counter-increment: step;
-    font-size: 3rem;
+    content: counter(step, decimal-leading-zero);
+    font-size: 2.25rem;
     font-weight: 600;
     color: var(--color-text-muted);
-    opacity: 0.3;
+    opacity: 0.2;
     display: block;
     margin-bottom: 1rem;
     line-height: 1;
@@ -351,9 +352,9 @@ body {
 
 .process-step h3 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-text);
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .process-step p {
@@ -375,7 +376,7 @@ body {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.75rem;
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -385,9 +386,9 @@ body {
 }
 
 .portfolio-card h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.75rem 0;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-text);
 }
 
@@ -577,7 +578,7 @@ body {
 
 @media (max-width: 1024px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     .pain-grid, .process-steps, .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);

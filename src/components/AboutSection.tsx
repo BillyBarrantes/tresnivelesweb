@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutSection() {
   return (
     <section id="servicios" className="page-section">
@@ -39,12 +41,12 @@ export default function AboutSection() {
         </div>
       </div>
       <div className="tech-logos">
-        <img src="/images/python.svg" alt="Python" />
-        <img src="/images/nodejs.svg" alt="Node.js" />
-        <img src="/images/react_wordmark_light.svg" alt="React" />
-        <img src="/images/postgresql.svg" alt="PostgreSQL" />
-        <img src="/images/supabase_wordmark_light.svg" alt="Supabase" />
-        <img src="/images/gemini_wordmark.svg" alt="Gemini" />
+        <Image src="/images/python.svg" alt="Python" width={80} height={28} />
+        <Image src="/images/nodejs.svg" alt="Node.js" width={80} height={28} />
+        <Image src="/images/react_wordmark_light.svg" alt="React" width={80} height={28} />
+        <Image src="/images/postgresql.svg" alt="PostgreSQL" width={80} height={28} />
+        <Image src="/images/supabase_wordmark_light.svg" alt="Supabase" width={80} height={28} />
+        <Image src="/images/gemini_wordmark.svg" alt="Gemini" width={80} height={28} />
       </div>
     </section>
   );

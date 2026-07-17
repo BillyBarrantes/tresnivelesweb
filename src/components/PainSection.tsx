@@ -55,8 +55,8 @@ export default function PainSection() {
         El problema no es tu operación.<br />Es el software que tienes.
       </h2>
       <p className="section-subtitle reveal">
-        Antes de ofrecer una solución, identificamos el origen real de la
-        fricción técnica que frena tu empresa.
+        Tres problemas que el software debería estar resolviendo
+        y que, sin embargo, siguen frenando a las empresas como la tuya.
       </p>
       <div className="pain-grid">
         {pains.map((pain, i) => (
