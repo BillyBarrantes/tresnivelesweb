@@ -1,11 +1,7 @@
 export default function PortfolioSection() {
   return (
     <section id="portafolio" className="page-section">
-      <h2 className="section-title">Capacidades aplicadas</h2>
-      <p className="section-subtitle">
-        Así se traduce nuestra experiencia en soluciones concretas para cada
-        necesidad de tu operación.
-      </p>
+      <h2 className="section-title">Lo que construimos</h2>
       <div className="portfolio-grid">
         <div className="portfolio-card">
           <h3>Sistemas de Gestión Interna</h3>

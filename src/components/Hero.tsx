@@ -34,15 +34,14 @@ export default function Hero() {
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
       <div className="hero-text">
-        <p className="hero-pretitle reveal">Desarrollo de Software & IA</p>
+        <p className="hero-pretitle reveal">Ingeniería de Software e IA</p>
         <h1 className="hero-title reveal">
           El software debería resolver<br />problemas, no crearlos
         </h1>
         <p className="hero-subtitle reveal">
-          Desarrollamos software a medida, automatizamos procesos e
-          implementamos inteligencia artificial donde realmente genera valor
-          — sin promesas vacías, sin integraciones frágiles, sin código
-          abandonado.
+          Software a medida, automatización de procesos e inteligencia
+          artificial aplicada directamente a tu operación real. Sin promesas
+          de marketing, sin integraciones que fallen.
         </p>
         <div className="hero-actions reveal">
           <a href="#contacto" className="cta-button">

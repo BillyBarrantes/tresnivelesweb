@@ -53,8 +53,8 @@ export default function ProcessSection() {
     <section className="page-section" id="proceso" ref={sectionRef}>
       <h2 className="section-title reveal">Cómo trabajamos</h2>
       <p className="section-subtitle reveal">
-        Un proceso claro, sin rodeos. Desde el diagnóstico hasta la entrega
-        y el soporte continuo.
+        Diagnosticamos tu operación real, construimos con metodología ágil
+        y te acompañamos después de la entrega.
       </p>
       <div className="process-steps">
         {steps.map((step, i) => (

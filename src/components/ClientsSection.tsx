@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function ClientsSection() {
   return (
     <section id="clientes" className="page-section">
-      <h2 className="section-title">Clientes</h2>
+      <h2 className="section-title">Han confiado en nosotros</h2>
       <div className="clients-carousel">
         <Image src="/images/interamericana.png" alt="Logo de Interamericana" width={180} height={40} />
         <Image src="/images/logo_AGP.svg" alt="Logo de AGP" width={100} height={40} />

@@ -3,37 +3,35 @@ import Image from 'next/image';
 export default function AboutSection() {
   return (
     <section id="servicios" className="page-section">
-      <h2 className="section-title">
-        Así construimos soluciones<br />que sí funcionan
-      </h2>
+      <h2 className="section-title">Cómo aportamos</h2>
       <p className="section-subtitle">
         No vendemos tecnología abstracta. Construimos herramientas digitales
         diseñadas para los procesos reales de tu empresa.
       </p>
       <div className="capabilities-grid">
         <div className="capability-card">
-          <h3>Software Engineering</h3>
+          <h3>Ingeniería de Software</h3>
           <p>
             Desarrollamos sistemas internos, plataformas escalables y
             herramientas digitales adaptadas a procesos reales de negocio.
           </p>
         </div>
         <div className="capability-card">
-          <h3>Process Automation</h3>
+          <h3>Automatización de Procesos</h3>
           <p>
             Automatizamos tareas repetitivas y flujos operativos con n8n,
             Python e integración de sistemas existentes.
           </p>
         </div>
         <div className="capability-card">
-          <h3>AI & Intelligence</h3>
+          <h3>Inteligencia Artificial</h3>
           <p>
             Implementamos agentes de IA, asistentes conversacionales y
             modelos predictivos con impacto medible en la operación.
           </p>
         </div>
         <div className="capability-card">
-          <h3>Advanced Web Platforms</h3>
+          <h3>Plataformas Web</h3>
           <p>
             Creamos experiencias web de alto rendimiento con arquitectura
             moderna, rendimiento optimizado y diseño funcional.
