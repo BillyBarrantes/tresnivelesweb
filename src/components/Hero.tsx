@@ -1,45 +1,19 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useScrollReveal({ threshold: 0.1, staggerDelay: 100 });
   const pipelineSteps = [
     { label: 'Datos operativos', status: 'Conectado' },
     { label: 'Flujo automatizado', status: 'En operación' },
     { label: 'Reporte ejecutivo', status: 'Listo' },
   ];
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const reveals = entry.target.querySelectorAll('.reveal');
-            reveals.forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).classList.add('is-visible');
-              }, i * 100);
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section className="hero" id="inicio" ref={sectionRef}>
       <div className="hero-text">
-        <p className="hero-pretitle reveal">Software, automatización y BI</p>
+        <p className="hero-pretitle reveal">Software, automatización e IA aplicada</p>
         <h1 className="hero-title reveal">
           Convertimos operación, datos e IA en sistemas que sí trabajan.
         </h1>

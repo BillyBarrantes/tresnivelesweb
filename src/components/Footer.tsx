@@ -16,7 +16,15 @@ export default function Footer() {
           <a href="#contacto">Contacto</a>
         </div>
         <div className="footer-column">
-          <p>&copy; 2025 3N Tres Niveles. Todos los derechos reservados.</p>
+          <h4>Contacto</h4>
+          <a href="mailto:hola@3n.pe">hola@3n.pe</a>
+          <p>Lima, Perú</p>
+        </div>
+        <div className="footer-column">
+          <h4>Legal</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <p>&copy; {new Date().getFullYear()} 3N Tres Niveles. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

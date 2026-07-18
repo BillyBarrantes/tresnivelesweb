@@ -41,7 +41,7 @@ export default function ContactSection() {
     <section id="contacto" className="page-section">
       <h2 className="section-title">¿Listo para empezar?</h2>
       <p className="section-text">
-        Cuéntanos sobre tu operación. Recibirás una propuesta detallada
+        Cuéntanos qué procesos necesitas ordenar. Recibirás una propuesta detallada
         sin compromiso.
       </p>
       {status === 'success' ? (
@@ -55,7 +55,7 @@ export default function ContactSection() {
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input type="email" name="email" placeholder="Correo electrónico" required />
           <input type="tel" name="telefono" placeholder="Teléfono" />
-          <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto" rows={4} required />
+          <textarea name="mensaje" placeholder="Describe los procesos que necesitas ordenar" rows={4} required />
           {status === 'error' && (
             <p style={{ color: 'var(--color-text)', fontSize: '0.875rem', margin: 0 }}>
               Ocurrió un error al enviar. Intenta de nuevo.
@@ -71,15 +71,15 @@ export default function ContactSection() {
         <div className="contact-close">
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Propuesta detallada sin compromiso</span>
+            <span>Evaluación inicial sin compromiso</span>
           </div>
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Respuesta en máximo 2 días hábiles</span>
+            <span>Propuesta ajustada según el alcance</span>
           </div>
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Soporte post-implementación incluido</span>
+            <span>Acompañamiento post-implementación</span>
           </div>
         </div>
         </>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const pains = [
   {
@@ -21,33 +21,7 @@ const pains = [
 ];
 
 export default function PainSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const reveals = entry.target.querySelectorAll('.reveal');
-            reveals.forEach((el, i) => {
-              setTimeout(() => {
-                (el as HTMLElement).classList.add('is-visible');
-              }, i * 150);
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollReveal({ threshold: 0.15, staggerDelay: 150 });
 
   return (
     <section className="page-section" id="problema" ref={sectionRef}>
