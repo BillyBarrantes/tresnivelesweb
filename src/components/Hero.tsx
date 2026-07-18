@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Hero() {
@@ -29,6 +30,12 @@ export default function Hero() {
           <a href="#servicios" className="hero-cta-secondary">
             Ver soluciones
           </a>
+        </div>
+        <div className="hero-trust reveal">
+          <Image src="/images/logo_AGP.svg" alt="" width={60} height={20} />
+          <Image src="/images/interamericana.png" alt="" width={90} height={20} />
+          <Image src="/images/Logo_American.png" alt="" width={90} height={20} />
+          <Image src="/images/Logo_Tradesur.png" alt="" width={90} height={20} />
         </div>
       </div>
       <div className="hero-product reveal" aria-label="Panel operativo de Tres Niveles">

@@ -27,6 +27,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} 3N Tres Niveles. Todos los derechos reservados.</p>
         </div>
       </div>
+      <a href="#inicio" className="footer-back">↑ Volver arriba</a>
     </footer>
   );
 }

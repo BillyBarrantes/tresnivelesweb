@@ -52,14 +52,15 @@ export default function Header() {
           Evaluar mi operación
         </a>
 
-        <div
+        <button
           className={`hamburger-menu ${isOpen ? 'active' : ''}`}
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
-        </div>
+        </button>
       </nav>
 
       <div className={`mobile-nav-links ${isOpen ? 'active' : ''}`}>
