@@ -1217,6 +1217,16 @@ body {
     flex-direction: column;
     gap: 5px;
     z-index: 1001;
+    padding: 0;
+    border: none;
+    background: none;
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
 }
 
 .hamburger-menu .bar {
