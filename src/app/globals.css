@@ -1994,7 +1994,91 @@ body {
     .bento-image-wrapper {
         min-height: 160px;
     }
-    .contact-close {
+.contact-select {
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: var(--font-inter), 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    transition: border-color 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%2366645D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.contact-select:focus {
+    outline: none;
+    border-color: var(--color-text-muted);
+}
+
+.contact-select option {
+    color: var(--color-text);
+    background: var(--color-surface);
+}
+
+.contact-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.contact-checkbox {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    accent-color: var(--color-text);
+    cursor: pointer;
+}
+
+.contact-checkbox-label a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+}
+
+.contact-whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: transparent;
+    transition: opacity 150ms ease-out, text-decoration-color 150ms ease;
+    opacity: 0.8;
+}
+
+.contact-whatsapp-link:hover {
+    opacity: 1;
+    text-decoration-color: var(--color-text-muted);
+}
+
+.contact-whatsapp-icon {
+    opacity: 0.5;
+    transition: opacity 150ms ease;
+}
+
+.contact-whatsapp-link:hover .contact-whatsapp-icon {
+    opacity: 0.8;
+}
+
+.contact-close {
+
         flex-direction: column;
         align-items: center;
         gap: 0.75rem;

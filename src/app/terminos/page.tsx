@@ -14,10 +14,11 @@ export default function TerminosPage() {
         <section>
           <h2>1. Servicios</h2>
           <p>
-            3N Tres Niveles (en adelante, &laquo;3N&raquo;) ofrece servicios de desarrollo de software a
-            medida, automatización de procesos, inteligencia artificial aplicada, analítica y BI, y
-            consultoría tecnológica. Los servicios se describen en detalle en la propuesta comercial o
-            contrato firmado entre las partes.
+            <strong>Tres Niveles S.A.C.</strong> (en adelante, &laquo;3N&raquo;), identificada con RUC
+            20606324911 y domicilio en Calle Ciro Alegría 607 - Lima, Perú, ofrece servicios de desarrollo
+            de software a medida, automatización de procesos, inteligencia artificial aplicada, analítica
+            y BI, y consultoría tecnológica. Los servicios se describen en detalle en la propuesta
+            comercial o contrato firmado entre las partes.
           </p>
           <p>
             Este sitio web tiene fines informativos y de contacto. La contratación de servicios se formaliza
@@ -28,7 +29,7 @@ export default function TerminosPage() {
         <section>
           <h2>2. Uso del sitio web</h2>
           <p>
-            Al utilizar este sitio web, el usuario se compromete a:
+            Al utilizar este sitio web <strong>www.tresniveles.com</strong>, el usuario se compromete a:
           </p>
           <ul>
             <li>Proporcionar información veraz y actualizada en el formulario de contacto.</li>
@@ -52,9 +53,9 @@ export default function TerminosPage() {
           </p>
           <ul>
             <li>El cliente conserva la propiedad intelectual de sus datos y contenidos.</li>
-            <li>3N conserva el derecho a mostrar el trabajo realizado en su portafolio, salvo acuerdo en
-            contrario.</li>
-            {/* TODO: confirmar política de portafolio con cada cliente */}
+            <li>3N tiene el derecho de mostrar el trabajo realizado, incluyendo logos, capturas de pantalla
+            y videos de demostración, como parte de su portafolio comercial, salvo acuerdo en contrario
+            entre las partes.</li>
           </ul>
         </section>
 
@@ -70,10 +71,9 @@ export default function TerminosPage() {
         <section>
           <h2>5. Limitación de responsabilidad</h2>
           <p>
-            Los servicios se proporcionan &laquo;tal cual&raquo; dentro de los alcances definidos en el
-            acuerdo correspondiente. 3N no será responsable por daños indirectos, pérdida de datos o
-            interrupción del negocio derivados del uso de los servicios, salvo en los casos previstos por
-            la ley aplicable.
+            Los servicios se proporcionan dentro de los alcances definidos en el acuerdo correspondiente.
+            3N no será responsable por daños indirectos, pérdida de datos o interrupción del negocio
+            derivados del uso de los servicios, salvo en los casos previstos por la ley aplicable.
           </p>
         </section>
 
@@ -89,15 +89,21 @@ export default function TerminosPage() {
         <section>
           <h2>7. Ley aplicable y jurisdicción</h2>
           <p>
-            Estos términos se rigen por la legislación de la República del Perú. Cualquier controversia se
-            somete a la jurisdicción de los tribunales de Lima, Perú.
+            Estos términos se rigen por la legislación de la República del Perú, incluyendo la Ley
+            N.° 29733, Ley de Protección de Datos Personales. Cualquier controversia se somete a la
+            jurisdicción de los jueces y tribunales de Lima, Perú.
           </p>
         </section>
 
         <section>
           <h2>8. Contacto</h2>
           <p>
-            Para consultas sobre estos términos, escríbenos a <a href="mailto:hola@3n.pe">hola@3n.pe</a>.
+            Para consultas sobre estos términos, puedes escribirnos a{' '}
+            <a href="mailto:contacto@tresniveles.com">contacto@tresniveles.com</a> o llamarnos al{' '}
+            <a href="tel:+51907948972">+51 907 948 972</a>.
+          </p>
+          <p>
+            Tres Niveles S.A.C. — Calle Ciro Alegría 607 - Lima, Perú — RUC 20606324911
           </p>
         </section>
       </div>

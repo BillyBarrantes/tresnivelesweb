@@ -14,24 +14,29 @@ export default function PrivacidadPage() {
         <section>
           <h2>1. Responsable del tratamiento</h2>
           <p>
-            <strong>3N Tres Niveles</strong> (en adelante, &laquo;3N&raquo;) es la entidad responsable del
-            tratamiento de los datos personales recogidos a través de este sitio web.
+            <strong>Tres Niveles S.A.C.</strong> (en adelante, &laquo;3N&raquo;), identificada con RUC
+            20606324911, con domicilio en Calle Ciro Alegría 607 - Lima, Perú, es la entidad responsable
+            del tratamiento de los datos personales recogidos a través de este sitio web.
           </p>
           <p>
-            Correo electrónico de contacto: <a href="mailto:hola@3n.pe">hola@3n.pe</a>
-            {/* TODO: validar email legal dedicado si existe */}
+            Correo electrónico de contacto general:{' '}
+            <a href="mailto:contacto@tresniveles.com">contacto@tresniveles.com</a>
           </p>
-          {/* TODO: confirmar razón social exacta, RUC y domicilio legal */}
+          <p>
+            Correo electrónico para asuntos de privacidad y datos personales:{' '}
+            <a href="mailto:lbarrantes@tresniveles.com">lbarrantes@tresniveles.com</a>
+          </p>
+          <p>Teléfono: <a href="tel:+51907948972">+51 907 948 972</a></p>
         </section>
 
         <section>
           <h2>2. Datos que recogemos</h2>
           <p>Podemos recoger y tratar las siguientes categorías de datos personales:</p>
           <ul>
-            <li><strong>Datos de contacto:</strong> nombre, correo electrónico, teléfono y mensaje proporcionados a través del formulario de contacto.</li>
+            <li><strong>Datos de contacto:</strong> nombre y apellidos, correo electrónico, teléfono, tipo de necesidad o servicio de interés, empresa y cargo, proporcionados a través del formulario de contacto.</li>
             <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, páginas visitadas y duración de la visita, recogidos mediante herramientas de analítica web.</li>
-            <li><strong>Datos de proyectos:</strong> imágenes, videos y descripciones de desarrollos que el cliente comparta voluntariamente para fines de portafolio o diagnóstico.</li>
-            {/* TODO: confirmar si se recogen datos adicionales (cookies de terceros, demos, etc.) */}
+            <li><strong>Datos de proyectos:</strong> documentos, imágenes y videos que el cliente comparta voluntariamente para fines de diagnóstico, desarrollo o portafolio.</li>
+            <li><strong>Datos operativos:</strong> información relacionada con procesos operativos que el cliente proporcione en el marco de los servicios contratados.</li>
           </ul>
         </section>
 
@@ -51,7 +56,8 @@ export default function PrivacidadPage() {
           <h2>4. Base legal</h2>
           <p>
             El tratamiento de tus datos se basa en tu consentimiento explícito al aceptar esta política y en la
-            ejecución de una relación contractual o precontractual cuando solicitas nuestros servicios.
+            ejecución de una relación contractual o precontractual cuando solicitas nuestros servicios, todo
+            ello conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento.
           </p>
         </section>
 
@@ -59,65 +65,67 @@ export default function PrivacidadPage() {
           <h2>5. Destinatarios y subprocesadores</h2>
           <p>
             No cedemos tus datos personales a terceros sin tu consentimiento, salvo obligación legal.
-            Podemos compartir datos con proveedores de servicios de infraestructura tecnológica necesarios
-            para la operación del sitio web y la prestación de servicios, como servicios de hosting, email y
-            almacenamiento en la nube.
+            Para la operación del sitio web y la prestación de servicios, utilizamos los siguientes
+            proveedores:
           </p>
-          {/* TODO: listar proveedores/subprocesadores concretos una vez confirmados: proveedor de hosting, plataforma de email, servicio cloud, etc. */}
+          <ul>
+            <li><strong>Infraestructura y hosting:</strong> Supabase y Google Cloud.</li>
+            <li><strong>Correo corporativo:</strong> contacto@tresniveles.com.</li>
+            <li><strong>Automatización interna:</strong> n8n y Python.</li>
+            <li><strong>Proveedores de inteligencia artificial:</strong> OpenAI, Gemini y Deep Seek.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>6. Transferencias internacionales</h2>
-          <p>
-            Es posible que algunos de los proveedores de servicios mencionados se encuentren ubicados fuera de
-            Perú. En tales casos, 3N garantiza que dichas transferencias se realizan con salvaguardas adecuadas
-            (cláusulas contractuales tipo, decisiones de adecuación o mecanismos equivalentes).
-          </p>
-          {/* TODO: confirmar ubicación exacta de servidores y mecanismos de transferencia */}
-        </section>
-
-        <section>
-          <h2>7. Plazo de retención</h2>
-          <p>
-            Conservamos tus datos personales mientras dure la relación comercial o, en ausencia de esta,
-            durante el tiempo necesario para cumplir con las obligaciones legales aplicables. Una vez cumplidas
-            dichas obligaciones, los datos serán eliminados de forma segura.
-          </p>
-          {/* TODO: confirmar plazo exacto de retención con asesoría legal */}
-        </section>
-
-        <section>
-          <h2>8. Derechos del usuario</h2>
-          <p>
-            Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos personales
-            (derechos ARCO). También puedes solicitar la portabilidad de tus datos y la limitación del tratamiento.
-            Para ejercer estos derechos, escríbenos a <a href="mailto:hola@3n.pe">hola@3n.pe</a>.
-          </p>
-        </section>
-
-        <section>
-          <h2>9. Política de inteligencia artificial y decisiones automatizadas</h2>
+          <h2>6. Inteligencia artificial y decisiones automatizadas</h2>
           <p>
             En 3N utilizamos modelos de inteligencia artificial como parte de los servicios que ofrecemos a
             nuestros clientes. Esta sección detalla cómo tratamos los datos en el contexto de la IA:
           </p>
           <ul>
-            <li><strong>Datos utilizados:</strong> Solo procesamos los datos que el cliente nos proporciona
-            expresamente para el desarrollo o implementación de soluciones de IA. No utilizamos datos de
-            clientes para entrenar modelos genéricos sin autorización explícita.</li>
-            <li><strong>Finalidad:</strong> Los modelos de IA se aplican a tareas específicas solicitadas por
-            el cliente: clasificación, extracción de información, asistencia operativa, análisis predictivo,
-            entre otras.</li>
-            <li><strong>Decisiones automatizadas:</strong> No tomamos decisiones automatizadas que produzcan
-            efectos jurídicos significativos sobre los usuarios sin supervisión humana. Cualquier resultado
-            generado por IA es revisable y validable por el cliente.</li>
-            <li><strong>Proveedores de IA:</strong> Podemos utilizar servicios de proveedores externos de
-            modelos de IA (APIs de terceros) bajo acuerdos de confidencialidad y protección de datos.</li>
-            <li><strong>Retención:</strong> Los datos utilizados en soluciones de IA se conservan según los
-            plazos acordados con cada cliente y se eliminan al término del servicio, salvo que el cliente
-            solicite su devolución.</li>
+            <li><strong>Datos que procesa la IA:</strong> datos de formularios, conversaciones, documentos, imágenes y datos operativos proporcionados por el cliente en el marco del servicio contratado.</li>
+            <li><strong>Entrenamiento de modelos:</strong> No utilizamos datos de clientes para entrenar modelos genéricos sin autorización explícita.</li>
+            <li><strong>Supervisión humana:</strong> Todas las soluciones de IA implementadas incluyen supervisión humana. No se toman decisiones automatizadas que produzcan efectos jurídicos significativos sin intervención de una persona.</li>
+            <li><strong>Proveedores de IA:</strong> OpenAI, Gemini y Deep Seek, todos bajo acuerdos de confidencialidad y protección de datos.</li>
           </ul>
-          {/* TODO: confirmar proveedores de IA específicos y términos de retención */}
+        </section>
+
+        <section>
+          <h2>7. Transferencias internacionales</h2>
+          <p>
+            No realizamos transferencias internacionales de datos personales fuera del territorio peruano
+            en el marco de las finalidades descritas en esta política.
+          </p>
+        </section>
+
+        <section>
+          <h2>8. Plazo de retención</h2>
+          <p>
+            Conservamos tus datos personales durante un plazo máximo de 12 meses desde el último contacto,
+            salvo que exista una obligación legal distinta o una relación contractual vigente que requiera
+            un plazo de retención mayor. Una vez cumplido el plazo, los datos serán eliminados de forma segura.
+          </p>
+        </section>
+
+        <section>
+          <h2>9. Derechos del usuario (ARCO)</h2>
+          <p>
+            La Ley N.° 29733, Ley de Protección de Datos Personales, te otorga los siguientes derechos,
+            que puedes ejercer en cualquier momento:
+          </p>
+          <ul>
+            <li><strong>Acceso:</strong> Solicitar información sobre los datos personales que tenemos sobre ti. Atenderemos tu solicitud en un plazo máximo de 20 días hábiles.</li>
+            <li><strong>Rectificación:</strong> Solicitar la corrección de datos inexactos o incompletos. Atenderemos tu solicitud en un plazo máximo de 10 días hábiles.</li>
+            <li><strong>Cancelación:</strong> Solicitar la eliminación de tus datos cuando ya no sean necesarios para las finalidades descritas. Atenderemos tu solicitud en un plazo máximo de 10 días hábiles.</li>
+            <li><strong>Oposición:</strong> Oponerte al tratamiento de tus datos para fines específicos. Atenderemos tu solicitud en un plazo máximo de 10 días hábiles.</li>
+          </ul>
+          <p>
+            Para ejercer cualquiera de estos derechos, escríbenos al correo{' '}
+            <a href="mailto:lbarrantes@tresniveles.com">lbarrantes@tresniveles.com</a>, indicando el
+            derecho que deseas ejercer y los datos necesarios para identificarte. La persona responsable
+            de atender estas solicitudes es el Responsable de Privacidad y Protección de Datos de Tres
+            Niveles S.A.C.
+          </p>
         </section>
 
         <section>
@@ -125,7 +133,8 @@ export default function PrivacidadPage() {
           <p>
             Implementamos medidas técnicas y organizativas adecuadas para proteger tus datos personales
             contra el acceso no autorizado, la pérdida, la alteración o la divulgación: cifrado SSL,
-            control de acceso, firewalls y políticas internas de seguridad.
+            control de acceso, firewalls y políticas internas de seguridad. Los datos se almacenan en
+            Supabase y Google Cloud, ambos con estándares de seguridad reconocidos.
           </p>
         </section>
 
@@ -138,10 +147,11 @@ export default function PrivacidadPage() {
         </section>
 
         <section>
-          <h2>12. Contacto</h2>
+          <h2>12. Contacto del responsable de privacidad</h2>
           <p>
             Si tienes preguntas sobre esta política o sobre el tratamiento de tus datos personales, puedes
-            escribirnos a <a href="mailto:hola@3n.pe">hola@3n.pe</a>.
+            escribir al Responsable de Privacidad y Protección de Datos de Tres Niveles S.A.C. al correo{' '}
+            <a href="mailto:lbarrantes@tresniveles.com">lbarrantes@tresniveles.com</a>.
           </p>
         </section>
       </div>

@@ -3,10 +3,16 @@ import { z } from 'zod';
 import { getResend } from '@/lib/resend';
 
 const contactSchema = z.object({
-  nombre: z.string().min(1, 'El nombre es obligatorio').max(100),
+  nombreApellidos: z.string().min(1, 'El nombre es obligatorio').max(100),
   email: z.string().email('Email inválido'),
-  telefono: z.string().max(20).optional().default(''),
+  telefono: z.string().min(1, 'El teléfono es obligatorio').max(20),
+  tipoNecesidad: z.string().min(1, 'Selecciona un tipo de necesidad'),
   mensaje: z.string().min(1, 'El mensaje es obligatorio').max(5000),
+  empresa: z.string().max(100).optional().default(''),
+  cargo: z.string().max(100).optional().default(''),
+  aceptaPrivacidad: z.boolean().refine(val => val === true, {
+    message: 'Debes aceptar la política de privacidad',
+  }),
 });
 
 export async function POST(request: Request) {
@@ -21,17 +27,20 @@ export async function POST(request: Request) {
       );
     }
 
-    const { nombre, email, telefono, mensaje } = parsed.data;
+    const { nombreApellidos, email, telefono, tipoNecesidad, mensaje, empresa, cargo } = parsed.data;
 
     const resend = getResend();
     await resend.emails.send({
       from: 'Contacto Web <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL!,
-      subject: `Nuevo contacto de ${nombre}`,
+      subject: `Nuevo contacto de ${nombreApellidos}`,
       text: [
-        `Nombre: ${nombre}`,
+        `Nombre: ${nombreApellidos}`,
         `Email: ${email}`,
-        `Teléfono: ${telefono || 'No proporcionado'}`,
+        `Teléfono: ${telefono}`,
+        `Tipo de necesidad: ${tipoNecesidad}`,
+        `Empresa: ${empresa || 'No proporcionada'}`,
+        `Cargo: ${cargo || 'No proporcionado'}`,
         `Mensaje: ${mensaje}`,
       ].join('\n'),
     });

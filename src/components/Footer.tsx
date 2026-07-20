@@ -17,7 +17,7 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h4>Contacto</h4>
-          <a href="mailto:hola@3n.pe">hola@3n.pe</a>
+          <a href="mailto:contacto@tresniveles.com">contacto@tresniveles.com</a>
           <p>Lima, Perú</p>
         </div>
         <div className="footer-column">
