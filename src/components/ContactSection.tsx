@@ -1,34 +1,44 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
+
+interface FormData {
+  nombre: string;
+  email: string;
+  telefono: string;
+  mensaje: string;
+}
 
 export default function ContactSection() {
   const [status, setStatus] = useState<
     'idle' | 'sending' | 'success' | 'error'
   >('idle');
 
+  const [formData, setFormData] = useState<FormData>({
+    nombre: '',
+    email: '',
+    telefono: '',
+    mensaje: '',
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
-
-    const form = e.currentTarget;
-    const data = {
-      nombre: (form.elements.namedItem('nombre') as HTMLInputElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      telefono: (form.elements.namedItem('telefono') as HTMLInputElement).value,
-      mensaje: (form.elements.namedItem('mensaje') as HTMLTextAreaElement).value,
-    };
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       if (res.ok) {
         setStatus('success');
-        form.reset();
+        setFormData({ nombre: '', email: '', telefono: '', mensaje: '' });
       } else {
         setStatus('error');
       }
@@ -45,26 +55,48 @@ export default function ContactSection() {
         sin compromiso.
       </p>
       {status === 'success' ? (
-        <p className="section-text" style={{ color: 'var(--color-text)' }}>
+        <p className="section-text contact-success-msg">
           Recibimos tu mensaje. Te enviaremos una propuesta ajustada a lo que nos cuentas.
         </p>
       ) : (
         <>
         <div className="contact-form-wrapper">
         <form className="contact-form" onSubmit={handleSubmit}>
-          <input type="text" name="nombre" placeholder="Nombre" required />
-          <input type="email" name="email" placeholder="Correo electrónico" required />
-          <input type="tel" name="telefono" placeholder="Teléfono" />
-          <textarea name="mensaje" placeholder="Describe los procesos que necesitas ordenar" rows={4} required />
+          <input
+            type="text" name="nombre" placeholder="Nombre" required
+            value={formData.nombre} onChange={handleChange}
+          />
+          <input
+            type="email" name="email" placeholder="Correo electrónico" required
+            value={formData.email} onChange={handleChange}
+          />
+          <input
+            type="tel" name="telefono" placeholder="Teléfono"
+            value={formData.telefono} onChange={handleChange}
+          />
+          <textarea
+            name="mensaje" placeholder="Describe los procesos que necesitas ordenar" rows={4} required
+            value={formData.mensaje} onChange={handleChange}
+          />
           {status === 'error' && (
-            <p style={{ color: 'var(--color-text)', fontSize: '0.875rem', margin: 0 }}>
+            <p className="contact-error-msg">
               Ocurrió un error al enviar. Intenta de nuevo.
             </p>
           )}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <div className="contact-submit-row">
             <button type="submit" className="cta-button" disabled={status === 'sending'}>
-               {status === 'sending' ? 'Enviando...' : 'Solicitar evaluación'}
+              {status === 'sending' ? (
+                <span className="btn-loading">
+                  <span className="spinner"></span>
+                  Enviando…
+                </span>
+              ) : (
+                'Solicitar evaluación'
+              )}
             </button>
+            <p className="contact-privacy-note">
+              Tratamos tus datos con confidencialidad y solo los usamos para responder a tu consulta.
+            </p>
           </div>
         </form>
         </div>

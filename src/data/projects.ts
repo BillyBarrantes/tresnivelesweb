@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   capabilities: string[];
   tech: string[];
+  highlights: string[];
 }
 
 export const projects: Project[] = [
@@ -16,6 +17,11 @@ export const projects: Project[] = [
       'Sistema de seguimiento de envíos con integración a sistemas internos y panel de control en tiempo real.',
     capabilities: ['Software operativo', 'Analítica y BI'],
     tech: ['React', 'Node.js', 'PostgreSQL'],
+    highlights: [
+      'Seguimiento de envíos en tiempo real',
+      'Integración con sistemas ERP',
+      'Panel de control operativo',
+    ],
   },
   {
     id: 'retail-001',
@@ -25,6 +31,11 @@ export const projects: Project[] = [
       'Flujo de aprobaciones, alertas y sincronización entre áreas comerciales, almacén y facturación.',
     capabilities: ['Automatización de Procesos', 'Software operativo'],
     tech: ['Node.js', 'PostgreSQL', 'n8n'],
+    highlights: [
+      'Flujo de aprobaciones automáticas',
+      'Sincronización almacén-facturación',
+      'Alertas operativas inteligentes',
+    ],
   },
   {
     id: 'industria-001',
@@ -34,5 +45,10 @@ export const projects: Project[] = [
       'Modelo de IA para extraer, clasificar y validar datos provenientes de órdenes de compra, facturas y guías.',
     capabilities: ['IA aplicada al negocio'],
     tech: ['Python', 'PostgreSQL', 'ChatGPT'],
+    highlights: [
+      'Extracción de datos no estructurados',
+      'Clasificación automática por tipo',
+      'Validación contra reglas de negocio',
+    ],
   },
 ];

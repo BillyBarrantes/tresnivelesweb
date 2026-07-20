@@ -1,22 +1,19 @@
-'use client';
-
 import Image from 'next/image';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import HeroReveal from './HeroReveal';
+import WordRotator from './WordRotator';
+import HeroMedia from './HeroMedia';
 
 export default function Hero() {
-  const sectionRef = useScrollReveal({ threshold: 0.1, staggerDelay: 100 });
-  const pipelineSteps = [
-    { label: 'Datos operativos', status: 'Conectado' },
-    { label: 'Flujo automatizado', status: 'En operación' },
-    { label: 'Reporte ejecutivo', status: 'Listo' },
-  ];
-
   return (
-    <section className="hero" id="inicio" ref={sectionRef}>
+    <HeroReveal>
       <div className="hero-text">
         <p className="hero-pretitle reveal">Software, automatización e IA aplicada</p>
         <h1 className="hero-title reveal">
-          Convertimos operación, datos e IA en sistemas que sí trabajan.
+          Capacidades<br />
+          que ordenan tu<br />
+          <WordRotator
+              words={['operación', 'proceso', 'negocio', 'equipo', 'crecimiento']}
+            />
         </h1>
         <p className="hero-subtitle reveal">
           Diseñamos software a medida, automatizaciones y analítica para que
@@ -32,54 +29,23 @@ export default function Hero() {
           </a>
         </div>
         <div className="hero-trust reveal">
-          <Image src="/images/logo_AGP.svg" alt="" width={60} height={20} />
-          <Image src="/images/interamericana.png" alt="" width={90} height={20} />
-          <Image src="/images/Logo_American.png" alt="" width={90} height={20} />
-          <Image src="/images/Logo_Tradesur.png" alt="" width={90} height={20} />
+          <span className="trust-logo-cell">
+            <Image src="/images/logo_AGP.svg" alt="" width={80} height={20} />
+          </span>
+          <span className="trust-logo-cell">
+            <Image src="/images/interamericana.png" alt="" width={80} height={20} />
+          </span>
+          <span className="trust-logo-cell">
+            <Image src="/images/Logo_American.png" alt="" width={80} height={20} />
+          </span>
+          <span className="trust-logo-cell">
+            <Image src="/images/Logo_Tradesur.png" alt="" width={80} height={20} />
+          </span>
         </div>
       </div>
-      <div className="hero-product reveal" aria-label="Panel operativo de Tres Niveles">
-        <div className="hero-product-body">
-          <div className="product-panel-header">
-            <div>
-              <span className="product-eyebrow">Panel operativo</span>
-              <h2>Resumen de implementación</h2>
-            </div>
-            <span className="product-status">Sistema activo</span>
-          </div>
-
-          <div className="product-kpi-grid">
-            <div className="product-kpi">
-              <span>Procesos mapeados</span>
-              <strong>Documentados</strong>
-            </div>
-            <div className="product-kpi">
-              <span>Integraciones</span>
-              <strong>ERP · CRM · BI</strong>
-            </div>
-          </div>
-
-          <div className="product-flow">
-            {pipelineSteps.map((step, i) => (
-              <div key={step.label} className="product-flow-step">
-                <span className="flow-index">{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <strong>{step.label}</strong>
-                  <p>{step.status}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="product-insight">
-            <span className="product-insight-label">Recomendación IA</span>
-            <p>
-              Priorizar automatización del flujo con mayor fricción antes de
-              escalar reportes ejecutivos.
-            </p>
-          </div>
-        </div>
+      <div className="hero-product reveal" aria-label="Panel operativo Tres Niveles">
+        <HeroMedia />
       </div>
-    </section>
+    </HeroReveal>
   );
 }

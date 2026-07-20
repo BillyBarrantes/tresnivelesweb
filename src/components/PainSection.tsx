@@ -29,7 +29,7 @@ export default function PainSection() {
         El problema no es tu operación.<br />Es el software que tienes.
       </h2>
       <p className="section-subtitle reveal">
-        Tres problemas que el software debería resolver — y que siguen
+        Tres problemas que el software debería resolver y que siguen
         frenando a empresas como la tuya.
       </p>
       <div className="pain-list">
