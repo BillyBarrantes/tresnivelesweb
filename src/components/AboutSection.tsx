@@ -103,23 +103,28 @@ export default function AboutSection() {
                   </div>
                   <span className="capability-outcome">{cap.outcome}</span>
                 </div>
-                <div className="bento-image-wrapper">
-                  <svg viewBox="0 0 340 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="flow-diagram-svg">
-                    <rect x="12" y="40" width="76" height="80" rx="12" fill="#F0EFE8" stroke="#D4D2C8" strokeWidth="1" />
-                    <text x="50" y="75" textAnchor="middle" fill="#151512" fontSize="13" fontWeight="500">Proceso</text>
-                    <text x="50" y="95" textAnchor="middle" fill="#66645D" fontSize="10">reglas operativas</text>
-                    <path d="M92 80h16" stroke="#66645D" strokeWidth="1.2" opacity="0.5" />
-                    <path d="M104 74l5 6-5 6" stroke="#66645D" strokeWidth="1.2" opacity="0.5" fill="none" />
-                    <rect x="116" y="40" width="76" height="80" rx="12" fill="#F0EFE8" stroke="#D4D2C8" strokeWidth="1" />
-                    <text x="154" y="75" textAnchor="middle" fill="#151512" fontSize="13" fontWeight="500">Datos</text>
-                    <text x="154" y="95" textAnchor="middle" fill="#66645D" fontSize="10">estructurados</text>
-                    <path d="M196 80h16" stroke="#66645D" strokeWidth="1.2" opacity="0.5" />
-                    <path d="M208 74l5 6-5 6" stroke="#66645D" strokeWidth="1.2" opacity="0.5" fill="none" />
-                    <rect x="220" y="34" width="108" height="92" rx="14" fill="#2F6B4F" fillOpacity="0.06" stroke="#2F6B4F" strokeOpacity="0.22" strokeWidth="1.2" />
-                    <text x="274" y="76" textAnchor="middle" fill="#151512" fontSize="14" fontWeight="500">IA aplicada</text>
-                    <text x="274" y="98" textAnchor="middle" fill="#66645D" fontSize="10">modelos + datos reales</text>
-                  </svg>
-                  <p className="bento-caption">La IA resuelve cuando el proceso está claro y los datos conectados.</p>
+                <div className="ia-dashboard">
+                  <div className="db-top">
+                    <span className="db-eyebrow">Enfoque de implementación</span>
+                    <span className="db-badge">Modelos validados</span>
+                  </div>
+                  <div className="ia-flow">
+                    <div className="ia-node">
+                      <strong>Proceso</strong>
+                      <span>reglas operativas</span>
+                    </div>
+                    <span className="ia-arrow">&rarr;</span>
+                    <div className="ia-node">
+                      <strong>Datos</strong>
+                      <span>estructurados</span>
+                    </div>
+                    <span className="ia-arrow">&rarr;</span>
+                    <div className="ia-node ia-node-primary">
+                      <strong>IA aplicada</strong>
+                      <span>modelos + datos reales</span>
+                    </div>
+                  </div>
+                  <div className="ia-footer">La IA resuelve cuando el proceso está claro y los datos conectados.</div>
                 </div>
               </div>
             ) : (

@@ -22,8 +22,8 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h4>Legal</h4>
-          <a href="#">Política de privacidad</a>
-          <a href="#">Términos del servicio</a>
+          <a href="/privacidad">Política de privacidad</a>
+          <a href="/terminos">Términos del servicio</a>
           <p>&copy; {new Date().getFullYear()} 3N Tres Niveles. Todos los derechos reservados.</p>
         </div>
       </div>

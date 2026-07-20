@@ -135,18 +135,6 @@ body {
     z-index: 2;
 }
 
-.hero-text::before {
-    content: '';
-    position: absolute;
-    left: -1.5rem;
-    top: 0.5rem;
-    width: 1px;
-    height: calc(100% - 1rem);
-    background-color: var(--color-text);
-    opacity: 0.12;
-    pointer-events: none;
-}
-
 @keyframes subtleFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-2px); }
@@ -228,7 +216,7 @@ body {
     background: var(--color-surface);
     border: 1px solid rgba(21, 21, 18, 0.12);
     border-radius: 28px;
-    box-shadow: 0 12px 40px rgba(21, 21, 18, 0.08);
+    box-shadow: 0 8px 24px rgba(21, 21, 18, 0.05);
     overflow: hidden;
     will-change: transform;
 }
@@ -1085,8 +1073,72 @@ body {
 .analytics-dashboard:hover .db-donut circle:nth-child(4) { animation: donutIn 400ms ease 200ms both; }
 .analytics-dashboard:hover .db-donut circle:nth-child(5) { animation: donutIn 400ms ease 300ms both; }
 
-.analytics-dashboard:hover .db-bar-fill {
-    animation: barPulse 600ms ease both;
+.analytics-dashboard:hover .db-bar:nth-child(1) .db-bar-fill { animation: barPulse 400ms ease 0ms both; }
+.analytics-dashboard:hover .db-bar:nth-child(2) .db-bar-fill { animation: barPulse 400ms ease 150ms both; }
+.analytics-dashboard:hover .db-bar:nth-child(3) .db-bar-fill { animation: barPulse 400ms ease 300ms both; }
+
+/* ===== IA DASHBOARD (subtarejta IA aplicada) ===== */
+.ia-dashboard {
+    width: 100%;
+    border-radius: 20px;
+    background: #FAFAF7;
+    border: 1px solid rgba(21, 21, 18, 0.1);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ia-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ia-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.5rem;
+    flex: 1;
+    border-radius: 12px;
+    border: 1px solid rgba(21, 21, 18, 0.08);
+    background: var(--color-surface);
+    text-align: center;
+}
+
+.ia-node strong {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.ia-node span {
+    font-size: 0.6875rem;
+    color: var(--color-text-muted);
+    line-height: 1.2;
+}
+
+.ia-node-primary {
+    background: rgba(47, 107, 79, 0.06);
+    border-color: rgba(47, 107, 79, 0.22);
+}
+
+.ia-arrow {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    opacity: 0.25;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.ia-footer {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    opacity: 0.5;
 }
 
 /* ===== AUTOMATION FLOW ===== */
@@ -1135,18 +1187,18 @@ body {
 }
 
 .automation-flow > * {
-    transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1), border-color 500ms ease, background 500ms ease;
-    transition-delay: 300ms;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1), border-color 400ms ease, background 400ms ease;
+    transition-delay: 200ms;
 }
 
 .capability-panel:hover .automation-flow > * {
     transform: scale(1.035);
 }
 
-.capability-panel:hover .automation-flow > :nth-child(2) { transition-delay: 500ms; }
-.capability-panel:hover .automation-flow > :nth-child(3) { transition-delay: 800ms; }
-.capability-panel:hover .automation-flow > :nth-child(4) { transition-delay: 1200ms; }
-.capability-panel:hover .automation-flow > :nth-child(5) { transition-delay: 1600ms; }
+.capability-panel:hover .automation-flow > :nth-child(2) { transition-delay: 300ms; }
+.capability-panel:hover .automation-flow > :nth-child(3) { transition-delay: 450ms; }
+.capability-panel:hover .automation-flow > :nth-child(4) { transition-delay: 700ms; }
+.capability-panel:hover .automation-flow > :nth-child(5) { transition-delay: 1000ms; }
 
 .capability-panel:hover .af-arrow {
     opacity: 0.55;
@@ -1569,9 +1621,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(21, 21, 18, 0.06);
+    margin-top: 3rem;
     opacity: 0.3;
 }
 
@@ -1616,6 +1666,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-surface);
     transition: border-color 0.2s ease;
+    resize: none;
 }
 
 .contact-form input:focus,
@@ -1864,9 +1915,6 @@ body {
     .hero-text {
         max-width: 100%;
     }
-    .hero-text::before {
-        display: none;
-    }
     .hero-product {
         width: 100%;
         border-radius: 22px;
@@ -2056,4 +2104,70 @@ body {
         animation: none !important;
         opacity: 0.3 !important;
     }
+}
+
+/* ===== LEGAL PAGES (Privacidad / Términos) ===== */
+.legal-page {
+    padding: 6rem 1.5rem 4rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.legal-page h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 0.25rem;
+    color: var(--color-text);
+}
+
+.legal-page .legal-date {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    opacity: 0.6;
+}
+
+.legal-page section {
+    margin-bottom: 2rem;
+}
+
+.legal-page h2 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.legal-page p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0 0 0.75rem;
+}
+
+.legal-page ul {
+    margin: 0.5rem 0 1rem;
+    padding-left: 1.25rem;
+}
+
+.legal-page li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 0.35rem;
+}
+
+.legal-page a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+}
+
+.legal-page strong {
+    color: var(--color-text);
+    font-weight: 500;
 }
