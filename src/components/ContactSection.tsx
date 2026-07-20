@@ -160,17 +160,19 @@ export default function ContactSection() {
             <span>Acompañamiento post-implementación</span>
           </div>
         </div>
+        <div className="contact-whatsapp-wrapper">
         <a
           href="https://wa.me/51907948972?text=Hola%2C%20quisiera%20consultar%20por%20los%20servicios%20de%203N"
           target="_blank"
           rel="noopener noreferrer"
           className="contact-whatsapp-link"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="contact-whatsapp-icon">
+          <svg width="28" height="28" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="contact-whatsapp-icon">
             <path d="M8 1C4.14 1 1 4.14 1 8c0 1.38.41 2.66 1.12 3.72L1 15l3.32-.87A6.95 6.95 0 008 15c3.86 0 7-3.14 7-7s-3.14-7-7-7zm3.08 9.95c-.2.56-.7.9-1.23 1.02-.35.08-.81.12-2.63-.57-2.2-.83-3.63-2.72-3.8-2.96-.17-.24-.9-1.2-.9-2.3 0-1.1.58-1.64.79-1.87.2-.22.44-.28.59-.28.15 0 .29 0 .42.01.14.01.33-.05.53.41.2.46.68 1.59.74 1.7.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62 1.03 1.34 1.67.92.82 1.7 1.07 1.94 1.19.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.39.69 1.63.81.24.12.4.18.46.28.06.1.06.58-.14 1.14z" fill="currentColor"/>
           </svg>
           También por WhatsApp
         </a>
+        </div>
         </>
       )}
     </section>
