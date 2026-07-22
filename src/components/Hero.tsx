@@ -44,7 +44,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-product reveal" aria-label="Panel operativo Tres Niveles">
-        <HeroMedia />
+        <HeroMedia mediaSrc="/media/hero-demo-3n.mp4" mediaType="video" />
       </div>
     </HeroReveal>
   );
