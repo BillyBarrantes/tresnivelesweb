@@ -6,6 +6,8 @@ export interface Project {
   capabilities: string[];
   tech: string[];
   highlights: string[];
+  mediaSrc?: string;
+  mediaType?: 'image' | 'video';
 }
 
 export const projects: Project[] = [
@@ -22,6 +24,8 @@ export const projects: Project[] = [
       'Integración con sistemas ERP',
       'Panel de control operativo',
     ],
+    mediaSrc: '/media/dashboard.mp4',
+    mediaType: 'video',
   },
   {
     id: 'retail-001',
@@ -36,6 +40,8 @@ export const projects: Project[] = [
       'Sincronización almacén-facturación',
       'Alertas operativas inteligentes',
     ],
+    mediaSrc: '/media/n8n-workflow.mp4',
+    mediaType: 'video',
   },
   {
     id: 'industria-001',
@@ -50,5 +56,7 @@ export const projects: Project[] = [
       'Clasificación automática por tipo',
       'Validación contra reglas de negocio',
     ],
+    mediaSrc: '/media/ERP-documentos.mp4',
+    mediaType: 'video',
   },
 ];

@@ -42,13 +42,26 @@ export default function PortfolioSection() {
                   background: `linear-gradient(135deg, ${color}18, ${color}08)`,
                 }}
               >
-                <div
-                  className="project-card-pattern"
-                  style={{
-                    backgroundImage: `radial-gradient(circle at 20px 20px, ${color}15 1.5px, transparent 1.5px)`,
-                    backgroundSize: '32px 32px',
-                  }}
-                />
+                {item.mediaSrc && item.mediaType === 'video' ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="project-card-video"
+                  >
+                    <source src={item.mediaSrc} />
+                  </video>
+                ) : (
+                  <div
+                    className="project-card-pattern"
+                    style={{
+                      backgroundImage: `radial-gradient(circle at 20px 20px, ${color}15 1.5px, transparent 1.5px)`,
+                      backgroundSize: '32px 32px',
+                    }}
+                  />
+                )}
               </div>
               <div className="project-card-body">
                 <span className="portfolio-industry-badge">{item.industry}</span>
