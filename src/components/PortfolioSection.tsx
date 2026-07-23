@@ -19,6 +19,11 @@ export default function PortfolioSection() {
   return (
     <section id="portafolio" className="page-section">
       <h2 className="section-title">Implementación confiable</h2>
+      <p className="section-subtitle">
+        Tres sistemas reales que ordenan operaciones, conectan áreas
+        y demuestran que software, automatización e IA funcionan
+        cuando se construyen con criterio.
+      </p>
       <div className="project-grid">
         {projects.map((item) => {
           const isExpanded = expandedId === item.id;
