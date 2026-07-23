@@ -1635,13 +1635,23 @@ body {
     gap: 0.5rem;
     font-size: 0.9375rem;
     color: var(--color-text-muted);
-    font-weight: 400;
+    font-weight: 500;
+}
+
+.contact-close-item a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.contact-close-item a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .contact-close-icon {
     font-size: 1rem;
     color: var(--color-text);
-    opacity: 0.3;
+    opacity: 0.5;
     flex-shrink: 0;
 }
 

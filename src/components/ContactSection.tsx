@@ -72,14 +72,15 @@ export default function ContactSection() {
 
   return (
     <section id="contacto" className="page-section">
-      <h2 className="section-title">¿Listo para empezar?</h2>
+      <h2 className="section-title">Hablemos de tu operación</h2>
       <p className="section-text">
-        Cuéntanos qué procesos necesitas ordenar. Recibirás una propuesta detallada
-        sin compromiso.
+        Describe los procesos que necesitas ordenar y recibe una
+        propuesta sin compromiso.
       </p>
       {status === 'success' ? (
         <p className="section-text contact-success-msg">
-          Recibimos tu mensaje. Te enviaremos una propuesta ajustada a lo que nos cuentas.
+          Recibimos tu solicitud. Nuestro equipo la revisará y te contactará
+          para agendar una evaluación de tus procesos.
         </p>
       ) : (
         <>
@@ -140,7 +141,7 @@ export default function ContactSection() {
                   Enviando…
                 </span>
               ) : (
-                'Solicitar evaluación'
+                  'Solicitar diagnóstico'
               )}
             </button>
           </div>
@@ -149,15 +150,19 @@ export default function ContactSection() {
         <div className="contact-close">
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Evaluación inicial sin compromiso</span>
+            <span>Evaluación sin compromiso</span>
           </div>
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Propuesta ajustada según el alcance</span>
+            <span>Propuesta ajustada a tu operación</span>
           </div>
           <div className="contact-close-item">
             <span className="contact-close-icon">→</span>
-            <span>Acompañamiento post-implementación</span>
+            <span>Soporte y evolución incluidos</span>
+          </div>
+          <div className="contact-close-item">
+            <span className="contact-close-icon">→</span>
+            <span>Tus datos se manejan bajo nuestra <a href="/privacidad" target="_blank" rel="noopener noreferrer">política de privacidad</a></span>
           </div>
         </div>
         <div className="contact-whatsapp-wrapper">
