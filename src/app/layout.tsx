@@ -9,17 +9,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "3N Tres Niveles — Software, Automatización e IA",
-    template: "%s | 3N Tres Niveles",
+    default: "Tres Niveles",
+    template: "%s | Tres Niveles",
   },
   description:
     "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible en tu empresa.",
   openGraph: {
-    title: "3N Tres Niveles — Software, Automatización e IA",
+    title: "Tres Niveles",
     description:
       "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible en tu empresa.",
     url: "https://tresniveles.com",
-    siteName: "3N Tres Niveles",
+    siteName: "Tres Niveles",
     locale: "es_PE",
     type: "website",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "3N Tres Niveles — Software, Automatización e IA",
+    title: "Tres Niveles",
     description:
       "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible.",
   },

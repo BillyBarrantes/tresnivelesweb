@@ -52,6 +52,7 @@ export default function Header() {
           <a href="#inicio" className="logo-link">
             <motion.div
               className="logo-wordmark-container"
+              initial={false}
               animate={{
                 width: isCompact ? 36 : 88,
                 '--clip-right': isCompact ? '63.6%' : '0%',
