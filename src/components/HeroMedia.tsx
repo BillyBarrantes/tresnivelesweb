@@ -25,6 +25,7 @@ export default function HeroMedia({ mediaSrc, mediaType, posterSrc }: HeroMediaP
           loop
           autoPlay
           playsInline
+          preload="none"
           poster={posterSrc}
           className="heromedia-asset"
         >

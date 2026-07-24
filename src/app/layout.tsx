@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     title: "Tres Niveles",
     description:
       "Desarrollamos software a medida, automatizamos procesos operativos e implementamos inteligencia artificial con impacto medible.",
+    images: ["/images/Logo3N.png"],
+  },
+  alternates: {
+    canonical: "https://tresniveles.com",
   },
   metadataBase: new URL('https://tresniveles.com'),
   robots: {
@@ -45,6 +49,10 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#F7F7F2",
 };
 
 export default function RootLayout({

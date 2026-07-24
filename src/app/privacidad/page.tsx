@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad',
+  description: 'Política de privacidad de Tres Niveles S.A.C. Conoce cómo manejamos tus datos personales conforme a la Ley N.° 29733.',
 };
 
 export default function PrivacidadPage() {

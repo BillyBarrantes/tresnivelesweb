@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Términos del Servicio',
+  description: 'Términos y condiciones de servicio de Tres Niveles S.A.C. Conoce las condiciones de uso de nuestro sitio web.',
 };
 
 export default function TerminosPage() {

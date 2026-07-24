@@ -24,7 +24,7 @@ const necesidades = [
 ];
 
 export default function ContactSection() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'rate_limited'>('idle');
   const [formData, setFormData] = useState<FormData>({
     nombreApellidos: '',
     email: '',
@@ -62,6 +62,8 @@ export default function ContactSection() {
           nombreApellidos: '', email: '', telefono: '', tipoNecesidad: '',
           mensaje: '', empresa: '', cargo: '', aceptaPrivacidad: false,
         });
+      } else if (res.status === 429) {
+        setStatus('rate_limited');
       } else {
         setStatus('error');
       }
@@ -123,6 +125,11 @@ export default function ContactSection() {
           {status === 'error' && (
             <p className="contact-error-msg">
               Ocurrió un error al enviar. Intenta de nuevo.
+            </p>
+          )}
+          {status === 'rate_limited' && (
+            <p className="contact-error-msg">
+              Has superado el límite de envíos. Espera unos minutos e intenta de nuevo.
             </p>
           )}
           <div className="contact-submit-row">

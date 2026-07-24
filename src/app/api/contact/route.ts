@@ -2,6 +2,36 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getResend } from '@/lib/resend';
 
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 15 * 60 * 1000;
+
+const rateStore = new Map<string, { count: number; resetAt: number }>();
+
+function getClientIp(request: Request): string {
+  const forwarded = request.headers.get('x-forwarded-for');
+  if (forwarded) {
+    return forwarded.split(',')[0].trim();
+  }
+  return 'unknown';
+}
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateStore.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateStore.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return true;
+  }
+
+  if (entry.count >= RATE_LIMIT) {
+    return false;
+  }
+
+  entry.count += 1;
+  return true;
+}
+
 const contactSchema = z.object({
   nombreApellidos: z.string().min(1, 'El nombre es obligatorio').max(100),
   email: z.string().email('Email inválido'),
@@ -17,6 +47,14 @@ const contactSchema = z.object({
 
 export async function POST(request: Request) {
   try {
+    const ip = getClientIp(request);
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Has superado el límite de envíos. Espera unos minutos e intenta de nuevo.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const parsed = contactSchema.safeParse(body);
 
