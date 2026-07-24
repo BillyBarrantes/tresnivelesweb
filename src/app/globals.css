@@ -33,22 +33,24 @@ body {
 }
 
 .header {
-    height: 60px;
+    height: 64px;
     padding: 0 5%;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
-    background-color: rgba(247, 247, 242, 0.88);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background-color: rgba(247, 247, 242, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+    transition: border-bottom-color 0.3s ease;
 }
 
 .header--scrolled {
-    border-bottom-color: var(--color-border);
+    border-bottom-color: rgba(21, 21, 18, 0.08);
 }
 
 .navbar {
@@ -66,13 +68,31 @@ body {
     gap: 2.5rem;
 }
 
-.logo-wordmark {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    color: var(--color-text);
+.logo-link {
+    display: block;
+    flex-shrink: 0;
     text-decoration: none;
-    line-height: 1;
+    line-height: 0;
+}
+
+.logo-wordmark-container {
+    position: relative;
+    height: 28px;
+    overflow: hidden;
+    flex-shrink: 0;
+    --clip-right: 63.6%;
+}
+
+.logo-wordmark {
+    height: 28px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-wm-animated {
+    clip-path: inset(0 var(--clip-right) 0 0);
+    -webkit-clip-path: inset(0 var(--clip-right) 0 0);
 }
 
 .nav-links {
@@ -118,7 +138,7 @@ body {
 }
 
 .main-content {
-    padding: 0 5%;
+    padding: 64px 5% 0;
     max-width: 1760px;
     margin: 0 auto;
     overflow-x: hidden;
@@ -128,7 +148,7 @@ body {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
     gap: clamp(3rem, 6vw, 6rem);
-    min-height: calc(100svh - 60px);
+    min-height: calc(100svh - 64px);
     padding: 6rem 0 5rem;
     align-items: center;
     position: relative;
@@ -1964,10 +1984,10 @@ body {
     flex-direction: column;
     background-color: var(--color-surface);
     position: fixed;
-    top: 68px;
+    top: 64px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 68px);
+    height: calc(100vh - 64px);
     align-items: center;
     justify-content: center;
     gap: 2rem;
