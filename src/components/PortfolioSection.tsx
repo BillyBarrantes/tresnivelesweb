@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { projects } from '@/data/projects';
 
 const industryColors: Record<string, string> = {
@@ -11,9 +11,16 @@ const industryColors: Record<string, string> = {
 
 export default function PortfolioSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const toggleCard = (id: string) => {
-    setExpandedId((prev) => (prev === id ? null : id));
+    setExpandedId((prev) => {
+      const next = prev === id ? null : id;
+      if (gridRef.current) {
+        gridRef.current.classList.toggle('has-expanded', next !== null);
+      }
+      return next;
+    });
   };
 
   return (
@@ -24,7 +31,7 @@ export default function PortfolioSection() {
         y demuestran que software, automatización e IA funcionan
         cuando se construyen con criterio.
       </p>
-      <div className="project-grid">
+      <div className="project-grid" ref={gridRef}>
         {projects.map((item) => {
           const isExpanded = expandedId === item.id;
           const color = industryColors[item.industry] || '#66645D';

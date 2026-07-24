@@ -136,6 +136,15 @@ export default function AboutSection() {
                     <span key={u} className="capability-use-case">{u}</span>
                   ))}
                 </div>
+                {i === 0 && (
+                  <svg className="sw-module-map" viewBox="0 0 320 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="88" y1="24" x2="104" y2="24" stroke="#66645D" strokeWidth="0.6" opacity="0.15" />
+                    <line x1="196" y1="24" x2="212" y2="24" stroke="#66645D" strokeWidth="0.6" opacity="0.15" />
+                    <rect x="8" y="14" width="80" height="20" rx="6" fill="#66645D" fillOpacity="0.05" stroke="#66645D" strokeWidth="0.5" strokeOpacity="0.1" />
+                    <rect x="112" y="8" width="84" height="32" rx="8" fill="#66645D" fillOpacity="0.07" stroke="#66645D" strokeWidth="0.5" strokeOpacity="0.12" />
+                    <rect x="216" y="14" width="80" height="20" rx="6" fill="#66645D" fillOpacity="0.05" stroke="#66645D" strokeWidth="0.5" strokeOpacity="0.1" />
+                  </svg>
+                )}
                 {i === 1 && (
                   <div className="automation-flow">
                     <div className="af-node">
